@@ -12,5 +12,7 @@ Using:
 
 ## Authors
 
-- [@turnernator1](https://www.github.com/turnernator1)
-
+- [@Jack Turner](https://www.github.com/turnernator1)
+- [@Aziah Miller]
+- [@Leo Fuentes]
+- [@Jeremy Genovese]
