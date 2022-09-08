@@ -14,6 +14,6 @@ Using:
 ## Authors
 
 - [Jack Turner](https://www.github.com/turnernator1)
-- [Aziah Miller](https://www.github.com/turnernator1)
+- [Aziah Miller](https://www.github.com/Typicle)
 - [Leo Fuentes](https://www.github.com/LeoFuentes11)
 - [Jeremy Genovese](https://www.github.com/Rev2UNI)
