@@ -67,7 +67,8 @@ CREATE TABLE PurchaseItems(
 );
 
 CREATE user IF NOT EXISTS dbadmin@localhost;
-GRANT all privileges ON SENIOR.User TO dbadmin@localhost;
+GRANT all privileges ON SENIOR.* TO dbadmin@localhost;
+
 
 --test inserts
 INSERT into Users(username, password, surname,preferred, title, email ) VALUES ('campingman154','dd0a10d89ad9c9e3f40b3c6f67f3b88eb9817ab928b5e55647516e486eb9cf22', 'Rosser', 'Richard', 'Mr', 'richardr@rosserfinance.com.au');
