@@ -17,6 +17,7 @@
     <b href="#about">About</b>
 </div>
 
+<div class="cards">
 <!--Product cards-->
 <!--php code to create card element for top n items in database-->
 <?php
@@ -28,6 +29,7 @@ global $conn;
 
 if($result = mysqli_query($conn, $sql)){
     $num_rows = mysqli_num_rows($result);
+    echo "<div class='cards'>";
     while($row = mysqli_fetch_assoc($result)) {
         $code = $row['item_code'];
         $name = $row['item_name'];
@@ -38,11 +40,12 @@ if($result = mysqli_query($conn, $sql)){
         <p><button>Add to Cart</button></p>
         </div>";
     }
-
+    echo "</div>";
 }
 
 
 ?>
+</div>
 <!-- Base card code, now used in php loop
 <div class="card"> <img src="images/test.png">
 <h1>product name</h1>
