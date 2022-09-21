@@ -45,7 +45,7 @@ CREATE TABLE ItemStock(
     item_code INTEGER PRIMARY KEY,
     brand varchar(25) NOT NULL,
     item_name varchar(50) ,
-    description varchar(200),
+    description varchar(500),
     price FLOAT(2),
     in_stock int NOT NULL,
     image_bytes blob
