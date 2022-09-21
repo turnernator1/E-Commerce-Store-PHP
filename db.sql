@@ -47,15 +47,8 @@ CREATE TABLE ItemStock(
     item_name varchar(50) ,
     description varchar(200),
     price FLOAT(2),
-    in_stock int NOT NULL
-);
-
-CREATE TABLE ItemImages(
-    item_code int NOT NULL,
-    image_seq int NOT NULL,
-    image_bytes blob,
-    PRIMARY KEY(item_code, image_seq),
-    FOREIGN KEY (item_code) REFERENCES ItemStock(item_code)
+    in_stock int NOT NULL,
+    image_bytes blob
 );
 
 CREATE TABLE luShippingMethods(
