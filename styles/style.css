@@ -50,6 +50,22 @@ body {
     color: orange;
 }
 
+#signin{
+    float: right;
+}
+
+#searchbar{
+    text-align:left;
+    vertical-align:text-top;
+    font-size:19px;
+    left:2000px;
+    top:20px;
+    width:409px;
+    height:38px;
+    position:absolute;
+    line-height:auto;
+    color:#8d8d8d;
+}
 
 /* Card styling */
 .cards{
