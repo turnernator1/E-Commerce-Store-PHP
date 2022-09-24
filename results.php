@@ -12,10 +12,10 @@
 
 <div class="topnav">
     <a>S.E.N.I.O.R</a>
-    <b class="active" href="#home">Home</b>
-    <b href="#news">News</b>
-    <b href="#contact">Contact</b>
-    <b href="Marketplace.php">Marketplace</b>
+    <a href="home.php"><b>Home</b></a>
+    <a href="home.php"><b>Shop</b></a>
+    <a href="home.php"><b>Marketplace</b></a>
+    <a href="home.php"><b>Support</b></a>
     <div id = signin></div>
 </div>
 
@@ -27,24 +27,29 @@
 <!-- get search term from GET parameter and then preprare the sql statement and execute-->
 <?php
     $search = '%' . $_GET["search"] . '%';
-    if(isset($_GET["search"])){
+    if(isset($_GET["search"])) {
         global $conn;
         require_once "scripts/dbconnect.php";
         $sql = "SELECT * from ItemStock where brand like ? or item_name like ? or description like ? ";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $search,$search,$search);
+        $stmt->bind_param("sss", $search, $search, $search);
         $stmt->execute();
-        if($result = $stmt->get_result()){
+        if ($result = $stmt->get_result()) {
             $num_rows = mysqli_num_rows($result);
-            while($row = mysqli_fetch_assoc($result)) {
-                $code = $row['item_code'];
-                $name = $row['item_name'];
-                $price = $row['price'];
-                $descr = $row['description'];
-                $bytes = $row['image_bytes'];
-                echo "<div class='result'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$". $price . "</p>
-        <p><button>Add to Cart</button></p>
-        </div>";
+            if ($num_rows > 0) {
+                if ($num_rows > 1){echo "<h2>" . $num_rows . " Results Found.</h2>";}else{echo "<h2>" . $num_rows . " Result Found.</h2>";}
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $code = $row['item_code'];
+                    $name = $row['item_name'];
+                    $price = $row['price'];
+                    $descr = $row['description'];
+                    $bytes = $row['image_bytes'];
+                    echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$" . $price . "</p>
+            <p><button>Add to Cart</button></p>
+            </div>";
+                }
+            } else {
+                echo "<h2>" . $num_rows . " Results Found. Please Try Again.</h2>";
             }
         }
     }
