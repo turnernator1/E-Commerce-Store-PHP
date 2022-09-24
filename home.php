@@ -51,10 +51,11 @@ if($result = mysqli_query($conn, $sql)){
     while($row = mysqli_fetch_assoc($result)) {
         $code = $row['item_code'];
         $name = $row['item_name'];
+        $brand = $row['brand'];
         $price = $row['price'];
         $descr = $row['description'];
         $bytes = $row['image_bytes'];
-        echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$". $price . "</p>
+        echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1 class='brand'>" . $brand . "</h1><h2 class='name'>" . $name . "</h2><p class='price'>$". $price . "</p>
         <p><button>Add to Cart</button></p>
         </div>";
     }
