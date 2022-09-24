@@ -70,6 +70,8 @@ body {
 /* Card styling */
 .cards{
     margin: auto;
+    height: 480px;
+    width: 2000px;
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -80,6 +82,15 @@ body {
     float:left;
     margin-left: 1%;
     margin-top: 1%;
+}
+
+.brand{
+    font-weight: bold;
+}
+
+.name{
+    font-weight: normal;
+    font-size: 20px;
 }
 
 .price {

@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/Style.css">
     <title>Homepage</title>
-    <script>let username = null </script>
-    <script>document.cookie = "user="+username;</script>
-    <script>document.cookie = "user=Jack";</script>
-    <script src="scripts/script.js"> </script>
-    <script>username = get_username()</script>
+    <script src="scripts/page_init.js" async> </script>
 </head>
 <body>
 
@@ -19,18 +15,15 @@
     <b class="active" href="#home">Home</b>
     <b href="#news">News</b>
     <b href="#contact">Contact</b>
-    <b href="#about">About</b>
-    <script>
-        if (username != null){ // cookie?? or just a js or html flag
-            document.write('<b href="#account" id="signin"> My Account</b>')
-        } else {
-            document.write('<b href="#signin" id="signin">Sign In / Register</b>')
-        }
-    </script
-    </script>
+    <b href="Marketplace.php">Marketplace</b>
+    <form action="results.php" method="get">
+        <input name="search" type="text" placeholder="Search for products.." required>
+        <input type="submit" value="Search">
+    </form>
+    <div id = signin></div>
 </div>
 
-<h2>Welcome, <script>'<h2>' + document.write(username) +'<h2>'</script></h2>
+<h2 id="welcome"></h2>
 
 <!--Search Bar Form
     Post to results.php
@@ -55,13 +48,11 @@ if($result = mysqli_query($conn, $sql)){
         $price = $row['price'];
         $descr = $row['description'];
         $bytes = $row['image_bytes'];
-        echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1 class='brand'>" . $brand . "</h1><h2 class='name'>" . $name . "</h2><p class='price'>$". $price . "</p>
+        echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h2 class='brand'>" . $brand . "</h2><h1 class='name'>" . $name . "</h1><p class='price'>$". $price . "</p>
         <p><button>Add to Cart</button></p>
         </div>";
     }
 }
-
-
 ?>
 </div>
 <!-- Base card code, now used in php loop

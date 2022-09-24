@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/Style.css">
     <title>Homepage</title>
+    <script src="scripts/page_init.js" async> </script>
 </head>
 <body>
 
@@ -14,14 +15,8 @@
     <b class="active" href="#home">Home</b>
     <b href="#news">News</b>
     <b href="#contact">Contact</b>
-    <b href="#about">About</b>
-    <script>
-        if (signedin){
-            document.write('<b href="#account" id="signin">My Account</b>')
-        } else {
-            document.write('<b href="#signin" id="signin">Sign In / Register</b>')
-        }
-    </script>
+    <b href="Marketplace.php">Marketplace</b>
+    <div id = signin></div>
 </div>
 
 <!--Search Bar Form
@@ -29,28 +24,31 @@
 -->
 
 <div class="results">
-<!--Product cards-->
-<!--php code to create card element for top n items in database-->
+<!-- get search term from GET parameter and then preprare the sql statement and execute-->
 <?php
-require_once "scripts/dbconnect.php";
-$sql = "SELECT * from ItemStock";
-global $conn;
-//currently loops 10 times echoing the same html
-//needs database conn, retrieve top n items, use vairbales to change price, name, image and text fields
-
-if($result = mysqli_query($conn, $sql)){
-    $num_rows = mysqli_num_rows($result);
-    while($row = mysqli_fetch_assoc($result)) {
-        $code = $row['item_code'];
-        $name = $row['item_name'];
-        $price = $row['price'];
-        $descr = $row['description'];
-        $bytes = $row['image_bytes'];
-        echo "<div class='result'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$". $price . "</p>
+    $search = '%' . $_GET["search"] . '%';
+    if(isset($_GET["search"])){
+        global $conn;
+        require_once "scripts/dbconnect.php";
+        $sql = "SELECT * from ItemStock where brand like ? or item_name like ? or description like ? ";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $search,$search,$search);
+        $stmt->execute();
+        if($result = $stmt->get_result()){
+            $num_rows = mysqli_num_rows($result);
+            while($row = mysqli_fetch_assoc($result)) {
+                $code = $row['item_code'];
+                $name = $row['item_name'];
+                $price = $row['price'];
+                $descr = $row['description'];
+                $bytes = $row['image_bytes'];
+                echo "<div class='result'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$". $price . "</p>
         <p><button>Add to Cart</button></p>
         </div>";
+            }
+        }
     }
-}
+
 
 
 ?>
