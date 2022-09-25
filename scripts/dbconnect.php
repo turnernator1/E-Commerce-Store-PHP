@@ -1,5 +1,5 @@
 <?php
-
+    
 define("DB_HOST", "localhost");
 define("DB_NAME", "SENIOR");
 define("DB_USER", "dbadmin");
