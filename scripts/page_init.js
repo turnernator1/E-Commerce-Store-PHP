@@ -1,7 +1,7 @@
 // this section of code runs when each linked page runs
 // it updates the right side nav bar to show
 // log in or my account
-<<<<<<< HEAD
+
 const signin = document.getElementById("signin");
 if (get_username() != null){
     signin.innerHTML = '<b href="#account">My Account</b>'
@@ -14,7 +14,7 @@ if (get_username() != null){
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
->>>>>>> 1620d184d5ef0f6324775a4e2567d1824c2eadfd
+
 }
 
 // retrieves username from cookies
