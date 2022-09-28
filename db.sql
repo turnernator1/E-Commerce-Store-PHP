@@ -81,6 +81,17 @@ CREATE TABLE PurchaseItems(
     FOREIGN KEY (item_code) REFERENCES ItemStock(item_code)
 );
 
+CREATE TABLE MarketplaceItems(
+    -- item_code is the barcode number (UPC or EAN)
+    item_code INTEGER PRIMARY KEY,
+    user_id int NOT NULL,
+    item_name varchar(50) ,
+    description varchar(500),
+    price FLOAT(2),
+    image_bytes blob
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON SENIOR.* TO dbadmin@localhost;
 
