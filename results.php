@@ -8,17 +8,6 @@
 </head>
 <body>
 
-<!--Top navigation menu-->
-
-<div class="topnav">
-    <a>S.E.N.I.O.R</a>
-    <a href="home.php"><b>Home</b></a>
-    <a href="home.php"><b>Shop</b></a>
-    <a href="home.php"><b>Marketplace</b></a>
-    <a href="home.php"><b>Support</b></a>
-    <div id = signin></div>
-</div>
-=======
 <?php require_once "inc/header.inc.php"; ?>
 
 <!--Search Bar Form
