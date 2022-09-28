@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 1620d184d5ef0f6324775a4e2567d1824c2eadfd
 define("DB_HOST", "localhost");
 define("DB_NAME", "SENIOR");
 define("DB_USER", "dbadmin");
