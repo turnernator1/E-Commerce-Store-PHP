@@ -92,6 +92,14 @@ CREATE TABLE MarketplaceItems(
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
+CREATE TABLE MarketplacePurchaseItems(
+    invoice_id int NOT NULL,
+    item_code int NOT NULL,
+    PRIMARY KEY (invoice_id,item_code),
+    FOREIGN KEY (invoice_id) REFERENCES Purchases(invoice_id),
+    FOREIGN KEY (item_code) REFERENCES MarketplaceItems(item_code)
+);
+
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON SENIOR.* TO dbadmin@localhost;
 
