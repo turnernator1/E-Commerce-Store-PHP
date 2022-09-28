@@ -10,7 +10,7 @@
 
 <!--Top navigation menu-->
 
-<<<<<<< HEAD
+
 <div class="topnav">
     <a class="logo">S.E.N.I.O.R</a>
     <a href="home.php"><b class="active">Home</b></a>
@@ -29,7 +29,7 @@
 =======
 <!-- Includes header  -->
 <?php require_once "inc/header.inc.php"; ?>
->>>>>>> 1620d184d5ef0f6324775a4e2567d1824c2eadfd
+
 
 <h2 id="welcome"></h2>
 
