@@ -10,7 +10,6 @@
 
 <!--Top navigation menu-->
 
-<<<<<<< HEAD
 <div class="topnav">
     <a>S.E.N.I.O.R</a>
     <a href="home.php"><b>Home</b></a>
@@ -21,7 +20,6 @@
 </div>
 =======
 <?php require_once "inc/header.inc.php"; ?>
->>>>>>> 1620d184d5ef0f6324775a4e2567d1824c2eadfd
 
 <!--Search Bar Form
     Post to results.php
