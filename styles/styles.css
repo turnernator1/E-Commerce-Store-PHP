@@ -431,11 +431,14 @@
   }
   
   .FormContainer form{
-  max-width: 300px;
+  width: auto;
   padding: 0 20px;
-  
-  
   }
+
+  form.contact_fom{
+    max-width: auto;
+    padding: 0 20px;
+    }
   
   form input {
   
@@ -512,3 +515,15 @@
     text-align: left;
     list-style-type: circle;
   }
+
+  #contact_form {
+    width: 70%;
+    height: auto;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.contact_box {
+  display:grid;
+  grid-column: span 2;
+}

@@ -12,7 +12,7 @@ I have also added a hidden class as certain features need to be hidden for the l
     <div class="hidden">
     <a href="home.php"><b>Shop</b></a>
     <a href="home.php"><b>Marketplace</b></a>
-    <a href="home.php"><b>Support</b></a>
+    <a href="contact.php"><b>Support</b></a>
     <form action="results.php" method="get">
         <input  name="search" type="text" placeholder="Search for products.." required>
         <input type="submit" value="Search">
