@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
@@ -15,21 +15,28 @@
 <?php require_once "inc/header.inc.php"; ?>
 
 <body>
-<div>
-<h1>Account Login</h1>
-</div>
-
-<div class="Login_Form">
-<form class="login" action="scripts/login_check.php">
-    <label for="uname"></label>
-    <input type="text" id="uname" name="uname" placeholder="Username" required>
-
-    <label for="password"></label>
-    <input type="password" id="password" name="password" placeholder="Password" required>
-</form>
-</div>
-<!-- <?php require_once "inc/menu.inc.php"; ?> -->
-    
+<div class="AccountPage">
+    <div class="Container">
+        <div class="row">
+            <div class="FormContainer login_form">
+                <div class="FormBTN">
+                    <h2>Account Login</h2>
+                    <form action="login.php">
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="BTN login_button">Login</button>
+                    </form>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2>HELP!</h2>
+                    <form action="account-recovery.php">
+                    <button type="submit" class="BTN login_button">Forgotten Password?</button>
+                    </form>
+                    <form action="register.php">
+                    <button type="submit" class="BTN login_button">Create New Account</button>
+                    </form>
+                </div>
 
 </body>
 </html>
