@@ -2,19 +2,12 @@
 // it updates the right side nav bar to show
 // log in or my account
 
-const signin = document.getElementById("signin");
-if (get_username() != null){
-    signin.innerHTML = '<b href="#account">My Account</b>'
-} else {
-    signin.innerHTML ='<b href="#signin"> Sign In / Register</b>'
-=======
-//updated the html to include working href and maintain bold text
+
 const signin = document.getElementById("signin");
 if (get_username() != null){
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
-
 }
 
 // retrieves username from cookies
