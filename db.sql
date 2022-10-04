@@ -1,3 +1,4 @@
+-- Author: Jack Turner
 SET @@AUTOCOMMIT = 1;
 
 DROP DATABASE IF EXISTS SENIOR;
