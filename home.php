@@ -24,7 +24,7 @@
 <!--php code to create card element for top n items in database-->
 <?php
 require_once "scripts/dbconnect.php";
-$sql = "SELECT * from ItemStock";
+$sql = "SELECT * from Items";
 global $conn;
 //currently loops 10 times echoing the same html
 //needs database conn, retrieve top n items, use vairbales to change price, name, image and text fields
