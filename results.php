@@ -21,7 +21,7 @@
     if(isset($_GET["search"])) {
         global $conn;
         require_once "scripts/dbconnect.php";
-        $sql = "SELECT * from ItemStock where brand like ? or item_name like ? or description like ? ";
+        $sql = "SELECT * from Items where brand like ? or item_name like ? or description like ? ";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $search, $search, $search);
         $stmt->execute();
