@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Jack Turner">
     <link rel="stylesheet" href="Styles/Style.css">
     <title>Homepage</title>
     <script src="scripts/page_init.js" async> </script>
