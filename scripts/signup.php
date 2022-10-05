@@ -4,6 +4,7 @@ $showAlert = false;
 $showError = false;
 $exists=false;
 
+echo "<h1>begin</h1>";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Include file which makes the
@@ -31,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // the username is already present
     // or not in our Database
     if($num == 0) {
-        echo "<h1>User Doesnt Exist, Account being made";
+        echo "<h1>User Doesnt Exist, Account being made</h1>";
         if(($password == $cpassword) && $exists==false) {
 
             $hash = password_hash($password,
