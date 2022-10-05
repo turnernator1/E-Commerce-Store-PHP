@@ -49,6 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result) {
                 $showAlert = true;
             }
+
             // getting new users user_id from database for session data
             $sql = "SELECT * FROM Users WHERE username = ?";
             $stmt = $conn->prepare($sql);
