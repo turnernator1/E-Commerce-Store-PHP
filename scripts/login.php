@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     }
     else {
         $row = mysqli_fetch_assoc($result);
-        if ($hash == $row['password']){
+        if (password_verify($password, $row['password'])){
             echo "<h1>Login Successful</h1>";
             $showAlert = 'Login Successful';
         } else {
