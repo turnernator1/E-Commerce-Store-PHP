@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
+    $title = $_POST["title"];
     $surname = $_POST["surname"];
     $preferred = $_POST["preferred"];
     $email = $_POST["email"];
@@ -38,10 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Password Hashing is used here.
             $sql = "INSERT INTO `Users` ( `username`, 
-                `password`, `surname`, `preferred`, `email`,`created`) VALUES (?, 
+                `password`, `title`,`surname`, `preferred`, `email`,`created`) VALUES (?,?, 
                 ?, ?, ?,?,current_timestamp())";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssss", $username, $hash, $surname,$preferred,$email);
+            $stmt->bind_param("sssss", $username, $hash, $title,$surname,$preferred,$email);
             $stmt->execute();
 
             $result = $stmt->get_result();
