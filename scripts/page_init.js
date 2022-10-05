@@ -6,16 +6,14 @@
 const signin = document.getElementById("signin");
 
 if (get_username() != 0){
-    console.log(get_username());
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
 }
 
-// retrieves username from cookies
+// retrieves username from php session passed into script from php
 function get_username() {
     try {
-        console.log(document.currentScript.getAttribute("user_id"));
         return document.currentScript.getAttribute("user_id");
     }
     catch (err){
@@ -24,15 +22,11 @@ function get_username() {
 
 }
 
-// sets username cookie
-function set_username(username){
-    document.cookie = "user="+username;
-}
 
 // updates welcome message on homepage
 function welcome(){
     const welcome = document.getElementById("welcome");
-    if (get_username() != null){
+    if (get_username() != 0){
         welcome.innerText = 'Welcome, ' + get_username();
     } else {
         welcome.innerText = 'Welcome, Guest!\nPlease Sign In or Register!';

@@ -14,12 +14,11 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 
 <!-- Includes header  -->
 <?php require_once "inc/header.inc.php";
-
         ?>
 
 
 <h2 id="welcome"></h2>
-
+<script>welcome();</script>
 <!--Search Bar Form
     Post to results.php
 -->
