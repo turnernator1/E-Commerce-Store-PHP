@@ -1,5 +1,6 @@
 <?php
 //Authors - Jack Turner & Aziah Miller
+session_start();
 $showAlert = false;
 $showError = false;
 $exists=false;
