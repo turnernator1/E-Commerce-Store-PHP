@@ -1,4 +1,5 @@
 <?php
+//Authors - Jack Turner & Aziah Miller
 $showAlert = false;
 $showError = false;
 $exists=false;
@@ -7,17 +8,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Include file which makes the
     // Database Connection.
-    include 'dbconnect.php';
+    global $conn;
+    require_once 'scripts/dbconnect.php';
 
     $username = $_POST["username"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
 
 
-    $sql = "Select * from Users where username='$username'";
-
-    $result = mysqli_query($conn, $sql);
-
+    $sql = "Select * from Users where username=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
     $num = mysqli_num_rows($result);
 
     // This sql query is use to check if
@@ -30,11 +33,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 PASSWORD_DEFAULT);
 
             // Password Hashing is used here.
-            $sql = "INSERT INTO `users` ( `username`, 
-                `password`, `date`) VALUES ('$username', 
-                '$hash', current_timestamp())";
+            $sql = "INSERT INTO `Users` ( `username`, 
+                `password`, `date`) VALUES (?, 
+                ?, current_timestamp())";
+                $sql = "Select * from Users where username=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $username, $hash);
+            $stmt->execute();
 
-            $result = mysqli_query($conn, $sql);
+            $result = $stmt->get_result();
 
             if ($result) {
                 $showAlert = true;
