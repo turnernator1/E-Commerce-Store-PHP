@@ -1,0 +1,137 @@
+
+.headerconfig {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    width: auto;
+    border-bottom: 1px solid #c9d3dd;
+    line-height: 1.6;
+    justify-content: space-between;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+}
+
+.profile-image {
+    width: 150px;
+    margin-left: 20px;
+}
+
+.home {
+    margin-left: 10px;
+    color: black;
+    font-weight: 500;
+    margin-top: 45px;
+}
+
+
+
+
+.logout {
+    margin-left:20%;
+}
+
+.vline {
+    border-left: 1px solid #000000;
+    padding: 20px;
+}
+
+
+.reviews {
+    margin-left: 10%;
+    color: #000;
+    display: flex;
+}
+
+.GContainer {
+    max-width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+      }
+    
+
+.col-4_margin{
+        flex-basis: 24%;
+        padding: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+        transition: transform 0.5s;
+        border: 1px solid #c9d3dd;
+        overflow: visible;
+    }
+
+.col-4_margin img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+span.search_bar {
+    display: flex;
+    min-width: 100px;
+}
+
+.item {
+    margin: 5px;
+    height: 30px;
+    border-radius: 12px;
+}
+
+.search {
+    min-width: 200px;
+    padding-left: 10px;
+}
+
+.grey_item {
+    background-color: rgba(255, 253, 253, 0.911);
+}
+
+.headerItem {
+    height: 103.984px;
+        text-align: center;
+}
+
+.p_top{
+    padding-top: 30px;
+}
+
+div#logo {
+    display: flex;
+}
+
+.logo {
+    height: auto;
+    width: auto;
+  }
+  
+  .newtopnav {
+    width: auto;
+  }
+  
+  .BTN.search_button{	
+    background: #fba913;	
+    border: 2px solid black;	
+    cursor:pointer;
+  }
+  
+  .BTN.search_button.item:hover{	
+    background: #04AA6D;
+    cursor:pointer;	
+  }	
+  
+  .profile_header{
+    width: 30px;
+    
+  }
+
+  /* The header_login style can be set to flex to display the account button on header */
+  .header_login {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    display:none;
+}
+
+.header_login a {
+    color: black;
+    text-decoration-color: blue;
+}

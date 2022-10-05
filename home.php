@@ -9,13 +9,14 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Homepage</title>
 </head>
+<?php require_once "inc/secondheader.inc.php"; ?>
 
 <body>
-
+<div class="content">
 
 <!-- Includes header  -->
 
-<div class="Header">
+<!-- <div class="Header">
     <div class="Container">
     <div class="topnav">
         <a class="logo">S.E.N.I.O.R</a>
@@ -28,9 +29,10 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
             <a href="signin.php"><c>Sign in</c></a>
             <a href="cart.php"><c>Cart</c></a>
         </div>
-    </div>
+    </div> -->
 
-<!-- Includes header  -->
+
+    <!-- Includes header  -->
 
 <div class="row">
     <div class="col-2">
@@ -270,6 +272,6 @@ if($result = mysqli_query($conn, $sql)){
 
 
 
-
+</div>
 </body>
 </html>

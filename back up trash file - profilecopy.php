@@ -5,9 +5,8 @@
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
-    <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" type="text/css" href="styles/newHeader.css">
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
     <!-- <script src="scripts/script.js" defer></script> -->
@@ -15,41 +14,44 @@
 
 <!--Top navigation menu-->
 
-<?php require_once "inc/secondheader.inc.php"; ?>
+<!-- <?php require_once "inc/header.inc.php"; ?> -->
 
-<body>
+
 <section id="profile-header">
-      <div class="ContainerUser">
+      <div class="GContainer">
         <div class="profileHeader">
-          <img src="img/profileImage.png" class="profile-image">
-          <div class="about">
-            <h1>User Name</h1>
-            <p>Joined in 2022</p>
-            <p>4 Items for sale</p>
-          </div>
-          <div class="reviews vline">
-            <span class="star_revs">
-              <span class="stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                </h3>
-              </span>
-              <p>10 Reviews</p>
-            </span>
+          <div id="logo">
+          <img src="img/logo.svg" class="profile-image headerItem">
+            <h1 class="home">Home</h1>
+            </div>
+          <div class="reviews vline headerItem p_top">
+            
+            <input class="search item grey_item" name="search" type="text" placeholder="SEARCH" required>
+            <form action="#">
+          <select class="item grey_item" name="Categories" id="categories">
+            <option value="All Categories">All Categories</option>
+            <option value="#1">PHP</option>
+            <option value="#2">Java</option>
+            <option value="#3">Golang</option>
+            <option value="#4">Python</option>
+            <option value="#5">C#</option>
+          </select>
+    </form>
+              <button type="submit" class="BTN search_button item">SEARCH</button>
+            
+
+            
             <br>
-            <p>20 Transactions</p>
+            
           </div>
-          <div class="logout vline">
-            <h1>Logout</h1>
-            <p>Update account details</p>
+          <div class="logout vline headerItem p_top">
+          <button type="submit" class="BTN search_button item">MY CART</button>
           </div>
         </div>
       </div>
     </section>
-
+    
+    <body>
     <section id="user-listings">
     <div class="Container">
             <div class="profileHeader">
