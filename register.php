@@ -27,7 +27,7 @@
                         <h4>Registering will only take a minute!</h4>
                         <br>
                         <!-- </span> -->
-                        <form action="scripts/signup.php">
+                        <form action="scripts/signup.php" method="post">
                             <select name="title">
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
