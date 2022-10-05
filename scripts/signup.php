@@ -4,9 +4,9 @@ $showAlert = false;
 $showError = false;
 $exists=false;
 
-
+echo "<h1>begin</h1>";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    echo "<h1>found post</h1>";
     // Include file which makes the
     // Database Connection.
     global $conn;
@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $preferred = $_POST["preferred"];
     $email = $_POST["email"];
 
-
+    echo "<h1>starting query bind</h1>";
     $sql = "Select * from users where username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
@@ -31,8 +31,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // This sql query is use to check if
     // the username is already present
     // or not in our Database
+    echo "<h1>found rows</h1>";
     if($num == 0) {
-
+        echo "<h1>creating account</h1>";
         if(($password == $cpassword) && $exists==false) {
 
             $hash = password_hash($password,
@@ -43,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 `password`, `title`,`surname`, `preferred`, `email`,`created`) VALUES (?,?, 
                 ?, ?, ?,?,current_timestamp())";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssss", $username, $hash, $title,$surname,$preferred,$email);
+            $stmt->bind_param("ssssss", $username, $hash, $title,$surname,$preferred,$email);
             $stmt->execute();
 
             $result = $stmt->get_result();
@@ -54,14 +55,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         }
         else {
-
+            echo "<h1>passwords not matching</h1>";
             $showError = "Passwords do not match";
         }
     }// end if
 
     if($num>0)
     {
-
+        echo "<h1>user already exists</h1>";
         $exists="Username not available";
     }
 
