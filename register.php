@@ -28,6 +28,12 @@
                         <br>
                         <!-- </span> -->
                         <form action="scripts/signup.php">
+                            <select name="title">
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Ms">Ms</option>
+                                <option value="-">Other</option>
+                            </select>
                             <span class="sideBySide">
                                 <input name="preferred" class="left" type="text" placeholder="First name" required>
                                 <input name="surname" class="right" type="text" placeholder="Last name" required>
