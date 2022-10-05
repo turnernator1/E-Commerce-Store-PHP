@@ -1,4 +1,6 @@
-<?php $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
+<?php
+session_start();
+$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
 
 <!-- Includes header  -->
 <?php require_once "inc/header.inc.php";
-        session_start();
+
         ?>
 
 
