@@ -18,7 +18,7 @@ function get_username() {
         return document.currentScript.getAttribute("user_id");
     }
     catch (err){
-        return null;
+        return '';
     }
 
 }
