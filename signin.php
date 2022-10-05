@@ -37,6 +37,6 @@
                     <button type="submit" class="BTN login_button">Create New Account</button>
                     </form>
                 </div>
-
+            
 </body>
 </html>
