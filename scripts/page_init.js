@@ -5,7 +5,7 @@
 
 const signin = document.getElementById("signin");
 
-if (get_username() !== 0){
+if (get_username() != 0){
     console.log(get_username());
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
 } else {
@@ -15,8 +15,7 @@ if (get_username() !== 0){
 // retrieves username from cookies
 function get_username() {
     try {
-        const user = document.currentScript.getAttribute("user_id");
-        return user;
+        return document.currentScript.getAttribute("user_id");
     }
     catch (err){
         return 0;
