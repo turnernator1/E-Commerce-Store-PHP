@@ -6,7 +6,7 @@
 const signin = document.getElementById("signin");
 
 if (get_username() != 0){
-    signin.innerHTML = '<a href="account.php"> <b>My Account</b></a><a href="logout.php"><b>Logout</b></a>'
+    signin.innerHTML = '<a href="account.php"> <b>My Account</b></a><a href="scripts/logout.php"><b>Logout</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
 }
