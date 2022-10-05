@@ -37,6 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 PASSWORD_DEFAULT);
 
             // Password Hashing is used here.
+            // Creating user in database
             $sql = "INSERT INTO `Users` ( `username`, 
                 `password`, `title`,`surname`, `preferred`, `email`,`created`) VALUES (?,?, 
                 ?, ?, ?,?,current_timestamp())";
@@ -48,12 +49,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result) {
                 $showAlert = true;
             }
+            // getting new users user_id from database for session data
+            $sql = "SELECT * FROM Users WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result=$stmt->get_result();
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['name'] = $row['preferred'];
+            // return home signed in
             header("Location: ../home.php");
 
         }
         else {
             $showError = "Passwords do not match";
-            header("Location: ../register.php");
+            //header("Location: ../register.php");
         }
     }// end if
 
@@ -61,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         echo "<h1>user already exists</h1>";
         $exists="Username not available";
-        header("Location: ../register.php");
+        //header("Location: ../register.php");
     }
 
 }//end if
