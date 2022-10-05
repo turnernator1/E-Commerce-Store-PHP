@@ -22,8 +22,8 @@
                 <div class="FormBTN">
                     <h2>Account Login</h2>
                     <form action="scripts/login.php" method="get">
-                        <input type="text" placeholder="Username" required>
-                        <input type="password" placeholder="Password" required>
+                        <input name="username" type="text" placeholder="Username" required>
+                        <input name="password" type="password" placeholder="Password" required>
                         <button type="submit" class="BTN login_button">Login</button>
                     </form>
                     <br>
