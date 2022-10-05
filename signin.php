@@ -21,7 +21,7 @@
             <div class="FormContainer login_form">
                 <div class="FormBTN">
                     <h2>Account Login</h2>
-                    <form action="login.php">
+                    <form action="scriptslogin.php" method="get">
                         <input type="text" placeholder="Username" required>
                         <input type="password" placeholder="Password" required>
                         <button type="submit" class="BTN login_button">Login</button>

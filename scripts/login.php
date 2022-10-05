@@ -4,15 +4,15 @@ $showAlert = false;
 $showError = false;
 $exists=false;
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] == "GET") {
 
     // Include file which makes the
     // Database Connection.
     global $conn;
     require_once 'scripts/dbconnect.php';
 
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = $_GET["username"];
+    $password = $_GET["password"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
 
