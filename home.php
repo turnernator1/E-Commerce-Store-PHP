@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/Style.css">
     <title>Homepage</title>
-    <script src="scripts/page_init.js" user_id="" async> </script>
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value?>" async> </script>
 </head>
 <body>
 
