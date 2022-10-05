@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     // Include file which makes the
     // Database Connection.
     global $conn;
-    require_once 'scripts/dbconnect.php';
+    require_once 'dbconnect.php';
 
     $username = $_GET["username"];
     $password = $_GET["password"];
@@ -25,13 +25,16 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
     if($num == 0) {
+        echo "<h1>Account does not exist</h1>";
         $showError = "Account does not exist"; //no account found
     }
     else {
         $row = mysqli_fetch_assoc($result);
         if ($hash == $row['password']){
+            echo "<h1>Login Successful</h1>";
             $showAlert = 'Login Successful';
         } else {
+            echo "<h1>Incorrect Password</h1>";
             $showAlert = 'Incorrect Password';
         }
 

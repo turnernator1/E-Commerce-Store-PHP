@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // This sql query is use to check if
     // the username is already present
     // or not in our Database
-    echo "<h1>found rows</h1>";
+
     if($num == 0) {
         echo "<h1>creating account</h1>";
         if(($password == $cpassword) && $exists==false) {
