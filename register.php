@@ -51,10 +51,7 @@
                             </div>
                             <input name="password" type="password" placeholder="Password" required>
                             <input name="cpassword" type="password" placeholder="Confirm Password" required>
-                            <span class="sideBySide">
-                            <label class="left" for="birthday"><br>Birthday:</label>
-                            <input class="right" type="date" id="birthday" name="birthday">
-                            </span>
+
                             <button type="submit" class="BTN login_button register_button">Next</button>
                         </form>
                     </div>
