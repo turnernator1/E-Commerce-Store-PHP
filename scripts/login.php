@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     $password = $_GET["password"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-
+    echo "<h1>finding " . $username. "</h1>";
     $sql = "Select * from Users where username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
