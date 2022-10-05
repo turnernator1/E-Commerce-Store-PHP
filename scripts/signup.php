@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
 
 
-    $sql = "Select * from Users where username=?";
+    $sql = "Select * from users where username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -30,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // the username is already present
     // or not in our Database
     if($num == 0) {
+        print("Pasy");
         if(($password == $cpassword) && $exists==false) {
 
             $hash = password_hash($password,
