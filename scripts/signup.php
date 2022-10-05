@@ -35,20 +35,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($num == 0) {
         echo "<h1>creating account</h1>";
         if(($password == $cpassword) && $exists==false) {
-
+            echo "<h1>hashing password</h1>";
             $hash = password_hash($password,
                 PASSWORD_DEFAULT);
 
             // Password Hashing is used here.
+            echo "<h1>declaring sql with params</h1>";
             $sql = "INSERT INTO `Users` ( `username`, 
                 `password`, `title`,`surname`, `preferred`, `email`,`created`) VALUES (?,?, 
                 ?, ?, ?,?,current_timestamp())";
+            echo "<h1>prepare</h1>";
             $stmt = $conn->prepare($sql);
+            echo "<h1>binding params</h1>";
             $stmt->bind_param("ssssss", $username, $hash, $title,$surname,$preferred,$email);
+            echo "<h1>execute</h1>";
             $stmt->execute();
 
             $result = $stmt->get_result();
-
+            echo "<h1>result: " . $result . "</h1>";
             if ($result) {
                 $showAlert = true;
             }
