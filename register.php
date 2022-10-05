@@ -27,7 +27,7 @@
                         <h4>Registering will only take a minute!</h4>
                         <br>
                         <!-- </span> -->
-                        <form action="signup.php">
+                        <form action="scripts/signup.php">
                             <span class="sideBySide">
                                 <input name="preferred" class="left" type="text" placeholder="First name" required>
                                 <input name="surname" class="right" type="text" placeholder="Last name" required>
