@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // Include file which makes the
     // Database Connection.
     global $conn;
-    require_once 'scripts/dbconnect.php';
+    require_once 'dbconnect.php';
 
     $username = $_POST["username"];
     $password = $_POST["password"];
