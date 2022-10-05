@@ -27,12 +27,12 @@
                         <h4>Registering will only take a minute!</h4>
                         <br>
                         <!-- </span> -->
-                        <form action="login.php">
+                        <form action="signup.php">
                             <span class="sideBySide">
-                                <input class="left" type="text" placeholder="First name" required>
-                                <input class="right" type="text" placeholder="Last name" required>
+                                <input name="preferred" class="left" type="text" placeholder="First name" required>
+                                <input name="surname" class="right" type="text" placeholder="Last name" required>
                             </span>
-                            <input type="email" placeholder="Email address" required>
+                            <input name="email" type="email" placeholder="Email address" required>
                             <div class="tooltip">Tips for a secure password?
                                 <span class="tooltiptext">
                                 <ul>
@@ -42,7 +42,8 @@
                                 </ul>    
                                 </span>
                             </div>
-                            <input type="password" placeholder="Password" required>
+                            <input name="password" type="password" placeholder="Password" required>
+                            <input name="cpassword" type="password" placeholder="Confirm Password" required>
                             <span class="sideBySide">
                             <label class="left" for="birthday"><br>Birthday:</label>
                             <input class="right" type="date" id="birthday" name="birthday">
