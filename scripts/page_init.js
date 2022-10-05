@@ -5,7 +5,8 @@
 
 const signin = document.getElementById("signin");
 
-if (get_username() != 0){
+if (get_username() != null){
+    console.log("Signed in as user " + get_username());
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a><a href="scripts/logout.php"><b>Logout</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
@@ -17,7 +18,7 @@ function get_username() {
         return document.currentScript.getAttribute("user_id");
     }
     catch (err){
-        return 0;
+        return null;
     }
 
 }
@@ -26,7 +27,7 @@ function get_username() {
 // updates welcome message on homepage
 function welcome(){
     const welcome = document.getElementById("welcome");
-    if (get_username() != 0){
+    if (get_username() != null){
         welcome.innerText = 'Welcome, ' + get_username();
     } else {
         welcome.innerText = 'Welcome, Guest!\nPlease Sign In or Register!';
