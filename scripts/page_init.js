@@ -6,7 +6,15 @@
 const signin = document.getElementById("signin");
 
 if (get_username() != 0){
-    signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
+    //signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
+    signin.innerHTML = '<a href="account.php"> <div class="dropdown">\n' +
+        '  <button class="dropbtn">My Account</button>\n' +
+        '  <div class="dropdown-content">\n' +
+        '    <a href="#">Link 1</a>\n' +
+        '    <a href="#">Link 2</a>\n' +
+        '    <a href="#">Link 3</a>\n' +
+        '  </div>\n' +
+        '</div></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
 }
