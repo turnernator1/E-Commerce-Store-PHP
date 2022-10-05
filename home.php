@@ -1,4 +1,4 @@
-<?php $session_value = (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>
+<?php $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
