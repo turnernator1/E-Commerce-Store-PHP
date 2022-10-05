@@ -12,11 +12,8 @@ if (get_username() != null){
 
 // retrieves username from cookies
 function get_username() {
-    let cookie = document.cookie
-        .split(';')
-        .map(cookie => cookie.split('='))
-        .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {})
-    return cookie.user;
+    const user = document.currentScript.getAttribute("user_id");
+    return user;
 }
 
 // sets username cookie

@@ -1,16 +1,19 @@
+<?php $session_value = (isset($_SESSION['id'])) ? $_SESSION['id'] : ''; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/Style.css">
     <title>Homepage</title>
-    <script src="scripts/page_init.js" async> </script>
+    <script src="scripts/page_init.js" user_id="" async> </script>
 </head>
 <body>
 
 
 <!-- Includes header  -->
-<?php require_once "inc/header.inc.php"; ?>
+<?php require_once "inc/header.inc.php";
+        session_start();
+        ?>
 
 
 <h2 id="welcome"></h2>

@@ -33,6 +33,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
         if (password_verify($password, $row['password'])){
             echo "<h1>Login Successful</h1>";
             $showAlert = 'Login Successful';
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['name'] = $row['preferred'];
             header("Location: ../home.php");
         } else {
             echo "<h1>Incorrect Password</h1>";

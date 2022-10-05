@@ -57,10 +57,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $showAlert = true;
             }
 
+            header("Location: ../home.php");
+
         }
         else {
             echo "<h1>passwords not matching</h1>";
             $showError = "Passwords do not match";
+            header("Location: ../register.php");
         }
     }// end if
 
@@ -68,6 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     {
         echo "<h1>user already exists</h1>";
         $exists="Username not available";
+        header("Location: ../register.php");
     }
 
 }//end if
