@@ -28,6 +28,7 @@
                         <br>
                         <!-- </span> -->
                         <form action="scripts/signup.php" method="post">
+                            <input name="username" type="text" placeholder="Username" required>
                             <select name="title">
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
