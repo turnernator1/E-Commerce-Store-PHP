@@ -459,7 +459,8 @@
     max-width: auto;
     padding: 0 20px;
     }
-  
+/* 
+Please fix (breaks my code, form input needs a class)  
   form input {
   
     width: 100%;
@@ -468,7 +469,7 @@
     padding: 0 10px;
     border: 1px solid black;
   }
-  
+   */
   .FormBTN {
     display: inline-block;
   }

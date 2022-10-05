@@ -16,10 +16,12 @@
             
           </div>
           <div class="reviews vline headerItem p_top">
-            
+            <div >
+            <form action="results.php" method="get">
             <input class="search item grey_item" name="search" type="text" placeholder="SEARCH" required>
-            <form action="#">
-          <select class="item grey_item" name="Categories" id="categories">
+            </div>
+           
+            <select class="item grey_item" name="Categories" id="categories">
             <option value="All Categories">All Categories</option>
             <option value="#1">PHP</option>
             <option value="#2">Java</option>
@@ -27,8 +29,10 @@
             <option value="#4">Python</option>
             <option value="#5">C#</option>
           </select>
-    </form>
-              <button type="submit" class="BTN search_button item">SEARCH</button>
+          <button type="submit" class="BTN search_button item">SEARCH</button>
+          
+        </form>
+              
             
 
             
