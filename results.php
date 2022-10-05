@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Jack Turner">
     <link rel="stylesheet" href="Styles/Style.css">
-    <title>Homepage</title>
+    <title>Search Results</title>
     <script src="scripts/page_init.js" async> </script>
 </head>
 <body>
@@ -34,6 +34,7 @@
                     $code = $row['item_code'];
                     $name = $row['item_name'];
                     $price = $row['price'];
+                    $rating = $row['rating'];
                     $descr = $row['description'];
                     $bytes = $row['image_bytes'];
                     echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$" . $price . "</p>

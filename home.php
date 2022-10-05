@@ -7,8 +7,10 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <title>Homepage</title>
 </head>
+
 <?php require_once "inc/secondheader.inc.php"; ?>
 
 <body>
@@ -76,129 +78,39 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <div class="SContainer">
     <h2 class="title">Featured Products</h2>
     <div class="row">
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
 
-        </div>
+            <?php
+            require_once "scripts/dbconnect.php";
+            $sql = "SELECT * from Items";
+            global $conn;
 
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-    </div>
-    <h2 class="title">New Products</h2>
-    <div class="row">
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
+            if($result = mysqli_query($conn, $sql)){
+                $num_rows = mysqli_num_rows($result);
+                while($row = mysqli_fetch_assoc($result)) {
+                    $code = $row['item_code'];
+                    $name = $row['item_name'];
+                    $brand = $row['brand'];
+                    $price = $row['price'];
+                    $rating = $row['rating'];
+                    $descr = $row['description'];
+                    $bytes = $row['image_bytes'];
+                    // print image and name
+                    echo "<div class='col-4'><a href='Product%20page.php?item_code=" . $code."'><img src='data:image/jpeg;base64,$bytes'>" .
+                         "<h3>" . $brand ."</h3>" .
+                         "<h4>" .$name . "</h4>" .
+                         " <div class='Rating'>";
+                    //get and print rating
+                    for ($x = 1; $x<=5;$x++)    {
+                        if($x <= $rating){
+                        echo " <span class='fa fa-star checked'></span>";
+                        }else {
+                        echo "<span class='fa fa-star'></span>";
+                        }
+                    }
+                    echo "</div>";
+                    //print price
+                    echo "<p> $" . $price."</p></a></div>";
+}} ?>
     </div>
 </div>
 
@@ -228,50 +140,6 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 
     
 </div>
-
-
-
-
-
-<div class="cards">
-<!--Product cards-->
-<!--php code to create card element for top n items in database-->
-<?php
-require_once "scripts/dbconnect.php";
-$sql = "SELECT * from Items";
-global $conn;
-//currently loops 10 times echoing the same html
-//needs database conn, retrieve top n items, use vairbales to change price, name, image and text fields
-
-if($result = mysqli_query($conn, $sql)){
-    $num_rows = mysqli_num_rows($result);
-    while($row = mysqli_fetch_assoc($result)) {
-        $code = $row['item_code'];
-        $name = $row['item_name'];
-        $brand = $row['brand'];
-        $price = $row['price'];
-        $descr = $row['description'];
-        $bytes = $row['image_bytes'];
-        echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h2 class='brand'>" . $brand . "</h2><h1 class='name'>" . $name . "</h1><p class='price'>$". $price . "</p>
-        <p><button>Add to Cart</button></p>
-        </div>";
-    }
-}
-?>
-</div>
-<!-- Base card code, now used in php loop
-<div class="card"> <img src="images/test.png">
-<h1>product name</h1>
-<p class="price">$19.99</p>
-<p>Some text about the product..</p>
-<p><button>Add to Cart</button></p>
-</div>
--->
-
-
-
-
-
 </div>
 </body>
 </html>
