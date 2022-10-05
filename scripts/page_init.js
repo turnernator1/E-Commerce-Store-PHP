@@ -4,7 +4,8 @@
 
 
 const signin = document.getElementById("signin");
-if (get_username() != null){
+
+if (get_username() !== 0){
     console.log(get_username());
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a>'
 } else {
@@ -13,8 +14,14 @@ if (get_username() != null){
 
 // retrieves username from cookies
 function get_username() {
-    const user = document.currentScript.getAttribute("user_id");
-    return user;
+    try {
+        const user = document.currentScript.getAttribute("user_id");
+        return user;
+    }
+    catch (err){
+        return 0;
+    }
+
 }
 
 // sets username cookie
