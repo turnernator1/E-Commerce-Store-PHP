@@ -48,6 +48,7 @@ CREATE TABLE Items(
     item_name varchar(50) NOT NULL,
     description varchar(500) NOT NULL,
     price FLOAT(2) NOT NULL,
+    rating int(1),
     in_stock int NOT NULL,
     image_bytes blob,
     marketplace_flag tinyint(1),
