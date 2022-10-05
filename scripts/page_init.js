@@ -15,6 +15,7 @@ if (get_username() != 0){
 // retrieves username from cookies
 function get_username() {
     try {
+        console.log(document.currentScript.getAttribute("user_id"));
         return document.currentScript.getAttribute("user_id");
     }
     catch (err){
