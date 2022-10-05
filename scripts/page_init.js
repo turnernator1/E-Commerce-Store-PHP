@@ -7,6 +7,7 @@ const signin = document.getElementById("signin");
 
 if (get_username() != null){
     console.log("Signed in as user " + get_username());
+
     signin.innerHTML = '<a href="account.php"> <b>My Account</b></a><a href="scripts/logout.php"><b>Logout</b></a>'
 } else {
     signin.innerHTML ='<a href="signin.php"> <b>Sign In / Register </b></a>'
