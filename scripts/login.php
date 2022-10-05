@@ -15,14 +15,14 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     $password = $_GET["password"];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    echo "<h1>finding " . $username. "</h1>";
+    echo "<h1>finding " . $username. " with hash " . $hash."</h1>";
     $sql = "Select * from Users where username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
     $num = mysqli_num_rows($result);
-
+    echo "<h1>Num rows : " . $num."</h1>";
 
     if($num == 0) {
         echo "<h1>Account does not exist</h1>";
