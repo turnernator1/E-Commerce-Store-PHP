@@ -23,6 +23,7 @@ if($session_value != '') {
         // random item code not already in database
         $item_code = null;
         $item_codeexist = false;
+        // check random code doesnt already exist
         while(!$item_codeexist){
             echo "<h1>generating item code</h1>";
             $item_code = random_int(55000,55999);
@@ -34,6 +35,7 @@ if($session_value != '') {
                 $item_codeexist = true;
             }
         }
+        // echo for debugging
         echo "<h1>inserting</h1>";
         echo "<h1>" . $brand . " - ". $name . " - ". $price . " - ". $descr . " - ". $bytes . " - ". $user_id . " - ". $item_code . "</h1>";
         $sql = "INSERT INTO `items` ( `item_code`,`brand`, 
@@ -49,6 +51,7 @@ if($session_value != '') {
         }
         //redirect to account?
         echo "<h1>Upload Succesfull!</h1>";
+        //return to home page, maybe make this direct to profile so the user can see thier updated listings
         header("Location: ../home.php");
 
 
