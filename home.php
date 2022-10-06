@@ -81,7 +81,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 
             <?php
             require_once "scripts/dbconnect.php";
-            $sql = "SELECT * from Items";
+            $sql = "SELECT * from Items where marketplace_flag = 0";
             global $conn;
 
             if($result = mysqli_query($conn, $sql)){
