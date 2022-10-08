@@ -15,7 +15,7 @@
 
 <!--Top navigation menu-->
 
-<?php require_once "inc/secondheader.inc.php"; ?>
+<?php require_once "inc/header.inc.php"; ?>
 
 <body>
 <section id="profile-header">

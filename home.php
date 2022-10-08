@@ -11,7 +11,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <title>Homepage</title>
 </head>
 
-<?php require_once "inc/secondheader.inc.php"; ?>
+<?php require_once "inc/header.inc.php"; ?>
 
 <body>
 <div class="content">

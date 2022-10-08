@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php require_once "inc/secondheader.inc.php"; ?>
+<?php require_once "inc/header.inc.php"; ?>
 
 <!--Search Bar Form
     Post to results.php

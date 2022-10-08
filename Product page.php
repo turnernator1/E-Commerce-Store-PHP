@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title><?php echo $brand . " - " . $name ?></title>
 </head>
-<?php require_once "inc/secondheader.inc.php"; ?>
+<?php require_once "inc/header.inc.php"; ?>
 <body>
 
 

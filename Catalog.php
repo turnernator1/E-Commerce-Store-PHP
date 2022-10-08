@@ -8,19 +8,7 @@
 </head>
 <body>
 
-    <div class="Header">
-    <div class="Container">
-    <div class="topnav">
-        <a class="logo">S.E.N.I.O.R</a>
-        <a href="home.php"><b class="active">Home</b></a>
-        <a href="home.php"><b>Shop</b></a>
-        <a href="home.php"><b>Marketplace</b></a>
-        <a href="home.php"><b>Support</b></a>
-        <div class="topnav-right">
-            <a href="home.php"><c>Sign in</c></a>
-            <a href="home.php"><c>Cart</c></a>
-        </div>
-    </div>
+<?php require_once "inc/header.inc.php"; ?>
 
 
                 <!--Products-->

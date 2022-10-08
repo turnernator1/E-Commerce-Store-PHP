@@ -1,3 +1,7 @@
+/* Created by Aziah Miller. This is the second header CSS, the group ultimately decided 
+not to use this header as it was more complicated for elderly users/may be difficult to see 
+due to contrast. */
+
 
 .headerconfig {
     background: white;
@@ -128,7 +132,7 @@ div#logo {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    display:none;
+    /* display:none; */
 }
 
 .header_login a {

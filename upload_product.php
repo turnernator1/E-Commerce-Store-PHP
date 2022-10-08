@@ -10,7 +10,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <title>Upload your Item</title>
 </head>
-<?php require_once "inc/secondheader.inc.php"; ?>
+<?php require_once "inc/header.inc.php"; ?>
 <body>
     <div class="row">
     <h1>Create a new listing here</h1>

@@ -1,4 +1,6 @@
 <!--New option for Header include file 
+Author: Aziah Miller 
+
 -->
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
@@ -23,11 +25,13 @@
            
             <select class="item grey_item" name="Categories" id="categories">
             <option value="All Categories">All Categories</option>
-            <option value="#1">PHP</option>
-            <option value="#2">Java</option>
-            <option value="#3">Golang</option>
-            <option value="#4">Python</option>
-            <option value="#5">C#</option>
+            <option value="Camping Accessories">Camping Accessories</option>
+            <option value="Outdoor Recreation">Outdoor Recreation</option>
+            <option value="Camper Van">Camper Van</option>
+            <option value="Safety & Survival Gear">Safety & Survival Gear</option>
+            <option value="Sleeping Gear">Navigation & GPS</option>
+            <option value="Tableware & Cooking Utensils ">Tableware & Cooking Utensils</option>
+            <option value="Sports & Leisure">Sports & Leisure</option>
           </select>
           <button type="submit" class="BTN search_button item">SEARCH</button>
           
