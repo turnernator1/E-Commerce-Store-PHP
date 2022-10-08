@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 </head>
 
 <?php require_once "inc/header.inc.php"; ?>
-
+<?php require_once "inc/cart.inc.php"; ?>
 <body>
 <div class="content">
 

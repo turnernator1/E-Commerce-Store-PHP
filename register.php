@@ -15,7 +15,7 @@
 <!--Top navigation menu-->
 
 <?php require_once "inc/header.inc.php"; ?>
-
+<?php require_once "inc/cart.inc.php"; ?>
 <body>
     <div class="AccountPage">
         <div class="Container">

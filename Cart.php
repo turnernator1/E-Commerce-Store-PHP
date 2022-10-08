@@ -10,7 +10,7 @@
 <body>
 
 <?php require_once "inc/header.inc.php"; ?>
-
+<?php require_once "inc/cart.inc.php"; ?>
 <!--Cart-->
 <div class="SContainer SCcart">
     <table>

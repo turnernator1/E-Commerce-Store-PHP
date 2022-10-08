@@ -11,6 +11,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <title>Upload your Item</title>
 </head>
 <?php require_once "inc/header.inc.php"; ?>
+<?php require_once "inc/cart.inc.php"; ?>
 <body>
     <div class="row">
     <h1>Create a new listing here</h1>

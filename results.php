@@ -12,7 +12,7 @@
 <body>
 
 <?php require_once "inc/header.inc.php"; ?>
-
+<?php require_once "inc/cart.inc.php"; ?>
 <!--Search Bar Form
     Post to results.php
 -->

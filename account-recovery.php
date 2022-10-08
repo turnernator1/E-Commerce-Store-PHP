@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
-    <!-- <script src="scripts/script.js" defer></script> -->
+    <?php require_once "inc/cart.inc.php"; ?>
 </head>
 
 <!--Top navigation menu-->

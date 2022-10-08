@@ -1,9 +1,12 @@
 <?php
 session_start();
+$_SESSION['currentProduct'] =  $_GET["item_code"];
+
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 
 //Get product data from the request to display further down
-if($_SERVER["REQUEST_METHOD"] == "GET") {
+//below was creating issue with add to cart (as using post), was not required, therefore, turned always tr
+if(1) {
 
 // Include file which makes the
 // Database Connection.
@@ -38,6 +41,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     <title><?php echo $brand . " - " . $name ?></title>
 </head>
 <?php require_once "inc/header.inc.php"; ?>
+
+<?php require_once "inc/cart.inc.php"; ?>
+
 <body>
 
 
@@ -54,8 +60,10 @@ echo
             <p>" . $brand ."</p>
             <h1>" . $name. "</h1>
             <h4>$" .$price ."</h4>
-            <input type='number' value='1'>
-            <a href='' class='BTN'>Add to Cart</a> ";
+            <form method='post'>
+            <input type='number' name='quantity' value='1'>
+            <input type='submit' name='btn-atc' class='BTN' value='Add to Cart'> 
+            </form>";
              for ($x = 1; $x<=5;$x++)    {
                         if($x <= $rating){
                         echo " <span class='fa fa-star checked'></span>";
