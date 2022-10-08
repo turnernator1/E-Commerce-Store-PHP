@@ -16,10 +16,10 @@
 <!--Top navigation menu-->
 
 <?php require_once "inc/header.inc.php"; ?>
-
+<?php require_once "inc/cart.inc.php"; ?>
 <body>
 <section id="profile-header">
-      <div class="ContainerUser">
+      <div class="Container">
         <div class="profileHeader">
           <img src="img/profileImage.png" class="profile-image">
           <div class="about">
