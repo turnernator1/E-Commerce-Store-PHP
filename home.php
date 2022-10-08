@@ -11,31 +11,14 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <title>Homepage</title>
 </head>
+<!-- Includes header  -->
 
 <?php require_once "inc/header.inc.php"; ?>
 <?php require_once "inc/cart.inc.php"; ?>
 <body>
 <div class="content">
 
-<!-- Includes header  -->
 
-<!-- <div class="Header">
-    <div class="Container">
-    <div class="topnav">
-        <a class="logo">S.E.N.I.O.R</a>
-        <a href="home.php"><b class="active">Home</b></a>
-        <a href="Catalog.php"><b>Shop</b></a>
-        <a href="home.php"><b>Marketplace</b></a>
-        <a href="Support.php"><b>Support</b></a>
-        <div class="topnav-right">
-            <a href="signin.php"><c>Account</c></a>
-            <a href="signin.php"><c>Sign in</c></a>
-            <a href="cart.php"><c>Cart</c></a>
-        </div>
-    </div> -->
-
-
-    <!-- Includes header  -->
 
 <div class="row">
     <div class="col-2">

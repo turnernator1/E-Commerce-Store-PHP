@@ -1,3 +1,5 @@
+<!-- HTML/CSS Template created by Jeremy Genovese, Cart functionality/dynamic elements (php/JS etc) created by Aziah. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
 </head>
 <body>
 
-<?php require_once "inc/header.inc.php"; ?>
+<!-- <?php require_once "inc/header.inc.php"; ?> -->
 <?php require_once "inc/cart.inc.php"; ?>
 <!--Cart-->
 <div class="SContainer SCcart">
@@ -20,59 +22,52 @@
             <th>Subtotal</th>
 
         </tr>
-        <tr>
-            <td>
-                <div class="cartimage">
-                    <img src="Images/test.png">
-                    <div>
-                        <p>Product name</p>
-                        <small>Price:$1000</small>
-                        <br>    
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td>PRODUCT NAME GOES HERE</td>
-            <td><input type="number" value="1"></td>
-            <td>$100</td>
 
-        </tr>
+        <?php
+        @session_start();
+        require_once "scripts/dbconnect.php";
+        $ids = array();
 
-        <tr>
-            <td>
-                <div class="cartimage">
-                    <img src="Images/test.png">
-                    <div>
-                        <p>Product name</p>
-                        <small>Price:$1000</small>
-                        <br>    
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td>PRODUCT NAME GOES HERE</td>
-            <td><input type="number" value="1"></td>
-            <td>$100</td>
+        $sql = "SELECT * FROM Items WHERE item_code = ?";
+        global $conn;
+        $total = 0;
+        if(isset($_SESSION['cart'])){
+            foreach($_SESSION['cart'] as $items){
+                $statement = mysqli_stmt_init($conn);
+                mysqli_stmt_prepare($statement, $sql); 
+                mysqli_stmt_bind_param($statement, 'i', $items['id']);
+                mysqli_stmt_execute($statement);
+                mysqli_stmt_bind_result($statement, $code, $brand, $name, $descr, $price, $rating, $in_stock, $bytes, $mfl, $musid);
+                // mysqli_stmt_fetch($statement);
+                if(mysqli_stmt_fetch($statement)){
+                        // print image and name
+                        echo "<tr>
+                            <td>
+                            <div class='cartimage'>
+                            <img src='data:image/jpeg;base64,$bytes'>" .
+                             "<div> <p>" .$name ."</p>
+                                    <small>Price:$" .$price ."</small>
+                                             <br>    
+                                             <a href=''>Remove</a>
+                                         </div>
+                                         </div>
+                                     </td>
+                                          
+                                          <td><input type='number' value='" .$items['count'] ."'></td>
+                                          <td>$" .$items['count']*$price ."</td>
+                                     </tr>";
+            $total = $items['count']*$price + $total;
+            }
+            
+        }}
+        
+        mysqli_close($conn);
+        
+        ?>
 
-        </tr>
+        
 
-        <tr>
-            <td>
-                <div class="cartimage">
-                    <img src="Images/test.png">
-                    <div>
-                        <p>Product name</p>
-                        <small>Price:$1000</small>
-                        <br>    
-                        <a href="">Remove</a>
-                    </div>
-                </div>
-            </td>
-            <td>PRODUCT NAME GOES HERE</td>
-            <td><input type="number" value="1"></td>
-            <td>$100</td>
 
-        </tr>
 
 
     </table>
@@ -81,15 +76,15 @@
     <table>
         <tr>
             <td>Subtotal</td>
-            <td>$300</td>
+            <td><?php echo $total; ?></td>
         </tr>
         <tr>
             <td>Tax</td>
-            <td>$100</td>
+            <td><?php echo $total*.1 ?></td>
         </tr>
         <tr>
             <td>Total</td>
-            <td>$400</td>
+            <td><?php echo $total + $total*.1; ?></td>
         </tr>
 
     </table>
