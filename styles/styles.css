@@ -689,6 +689,11 @@ opacity: 0.7;
   float: right;
 }
 
+#myCart{
+  float: right;
+}
+
+
 #searchbar{
   text-align:left;
   vertical-align:text-top;

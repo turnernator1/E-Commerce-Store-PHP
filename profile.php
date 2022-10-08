@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
     <!-- <script src="scripts/script.js" defer></script> -->

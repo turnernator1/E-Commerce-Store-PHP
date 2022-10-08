@@ -34,6 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <title><?php echo $brand . " - " . $name ?></title>
 </head>
 <?php require_once "inc/header.inc.php"; ?>

@@ -6,6 +6,7 @@
     <title>Sign Up | New User Register</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
     <!-- <script src="scripts/script.js" defer></script> -->

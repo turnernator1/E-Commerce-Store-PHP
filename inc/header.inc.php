@@ -16,6 +16,9 @@ I have also added a hidden class as certain features need to be hidden for the l
         <input  name="search" type="text" placeholder="Search for products.." required>
         <input type="submit" value="Search">
     </form>
+    <div id = myCart>
+    <a href="cart.php"><b>My Cart</b></a>
+    </div>
     <div id = signin></div>
 </div>
 </div>
