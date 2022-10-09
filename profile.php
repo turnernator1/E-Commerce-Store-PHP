@@ -37,7 +37,7 @@ require_once 'scripts\dbconnect.php';?>
               $result = $stmt->get_result();
               $row = mysqli_fetch_assoc($result);
               echo "<h1>".$row['title']. " ". $row['preferred']. " ". $row['surname'] . " ("  .$row['username'].")</h1>";
-              echo "<p>Joined in ". $row['created']->format('F Y')."</p>";
+              echo "<p>Joined in ". date('F Y',['created'])."</p>";
               $sql = "Select * from Items where marketplace_userid=?";
               $stmt = $conn->prepare($sql);
               $stmt->bind_param("s", $_SESSION['user_id']);
