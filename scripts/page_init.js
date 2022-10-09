@@ -5,6 +5,22 @@
 
 const signin = document.getElementById("signin");
 
+window.onload = function() {
+    if (window.location.href.indexOf('home.php') > -1) {
+        welcome();
+    }
+}
+
+// updates welcome message on homepage
+function welcome(){
+    const welcome = document.getElementById("welcome");
+    if (get_username() != ''){
+        welcome.innerText = 'Welcome, ' + get_username();
+    } else {
+        welcome.innerText = 'Welcome, Guest!\nPlease Sign In or Register!';
+    }
+}
+
 if (get_username() != ''){
     console.log("Signed in as user " + get_username());
     signin.innerHTML = '<a href="profile.php"> <b>My Account</b></a><a href="scripts/logout.php"><b>Logout</b></a>'
@@ -23,20 +39,6 @@ function get_username() {
 
 }
 
-window.onload = function() {
-    if (window.location.href.indexOf('home.php') > -1) {
-        welcome();
-    }
-}
 
-// updates welcome message on homepage
-function welcome(){
-    const welcome = document.getElementById("welcome");
-    if (get_username() != ''){
-        welcome.innerText = 'Welcome, ' + get_username();
-    } else {
-        welcome.innerText = 'Welcome, Guest!\nPlease Sign In or Register!';
-    }
-}
 
 
