@@ -96,6 +96,12 @@
       background-color: #333;
       color: orange;
     }
+
+  .logo {
+    width: 20%;
+    max-width: 300px;
+    height: auto;
+  }
   
   
   

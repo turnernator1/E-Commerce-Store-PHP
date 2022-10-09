@@ -38,7 +38,7 @@ require_once 'scripts\dbconnect.php';?>
               $row = mysqli_fetch_assoc($result);
               echo "<h1>".$row['title']. " ". $row['preferred']. " ". $row['surname'] . " ("  .$row['username'].")</h1>";
               echo "<p>Joined in ". date('F Y',strtotime($row['created']))."</p>";
-              $sql = "Select * from Items where marketplace_userid=?";
+              $sql = "Select * from Items where in_stock = 1 and marketplace_userid=?";
               $stmt = $conn->prepare($sql);
               $stmt->bind_param("s", $_SESSION['user_id']);
               $stmt->execute();
