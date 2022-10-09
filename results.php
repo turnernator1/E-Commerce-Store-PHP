@@ -41,12 +41,13 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
                 if ($num_rows > 1){echo "<h2>" . $num_rows . " Results Found.</h2>";}else{echo "<h2>" . $num_rows . " Result Found.</h2>";}
                 while ($row = mysqli_fetch_assoc($result)) {
                     $code = $row['item_code'];
+                    $brand = $row['brand'];
                     $name = $row['item_name'];
                     $price = $row['price'];
                     $rating = $row['rating'];
                     $descr = $row['description'];
                     $bytes = $row['image_bytes'];
-                    echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $name . "</h1><p class='price'>$" . $price . "</p>
+                    echo "<div class='card'> <img src='data:image/jpeg;base64,$bytes'> <h1>" . $brand. "</h1> <h2>" . $name . "</h2><p class='price'>$" . $price . "</p>
             <p><button>Add to Cart</button></p>
             </div>";
                 }

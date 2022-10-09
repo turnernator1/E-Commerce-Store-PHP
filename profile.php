@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
+$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
+global $conn;
+require_once 'dbconnect.php';?>
 <!-- this is the general page users will use to login -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +29,26 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
         <div class="profileHeader">
           <img src="img/profileImage.png" class="profile-image">
           <div class="about">
-            <h1>User Name</h1>
-            <p>Joined in 2022</p>
-            <p>4 Items for sale</p>
+              <?php
+              $sql = "Select * from Users where username=?";
+              $stmt = $conn->prepare($sql);
+              $stmt->bind_param("s", $_SESSION['user_id']);
+              $stmt->execute();
+              $result = $stmt->get_result();
+              echo "<h1>".$result['title']. " ". $result['preferred']. " ". $result['surname'] . " ("  .$result['user_id'].")</h1>";
+              echo "<p>Joined in ". $result['created']->format('F Y')."</p>";
+              $sql = "Select * from Items where marketplace_userid=?";
+              $stmt = $conn->prepare($sql);
+              $stmt->bind_param("s", $_SESSION['user_id']);
+              $stmt->execute();
+              $result = $stmt->get_result();
+              $num = mysqli_num_rows($result);
+              if ($num > 0){
+                  echo "<p>" . $num. " Items for Sale</p>";
+              } else{
+                  echo "<p>No Items for Sale</p>";
+              }
+              ?>
           </div>
           <div class="reviews vline">
             <span class="star_revs">
@@ -61,65 +80,30 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <h2 class="title">Current Listings</h2>
     
     <div class="row">
-        <div class="col-4_margin">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
 
-        </div>
+            <?php
+            if($num > 0){
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $code = $row['item_code'];
+                    $brand = $row['brand'];
+                    $name = $row['item_name'];
+                    $price = $row['price'];
+                    $rating = $row['rating'];
+                    $descr = $row['description'];
+                    $bytes = $row['image_bytes'];
+                    echo "<div class='col-4_margin'>";
+                    echo "<img src='data:image/jpeg;base64,$bytes'>";
+                    echo "<h4><b>" . $brand . "</b></h4";
+                    echo "<h4>" . $name . "</h4";
+                    echo "<p>$" . $price . "</p></div>";
+                }
+            } else {
+                echo "<h2>No Items to display</h2>";
+            }
 
-        <div class="col-4_margin">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
+            ?>
 
-        </div>
 
-        <div class="col-4_margin">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4_margin">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
             </div>    
             </div>
 
