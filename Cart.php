@@ -1,6 +1,6 @@
 <?php require_once "inc/session.inc.php"; ?>
 
-<!-- HTML/CSS Template created by Jeremy Genovese, Cart functionality/dynamic elements (php/JS etc) created by Aziah. -->
+<!-- HTML/CSS Template created by Jeremy Genovese, Cart functionality/dynamic elements (php/JS/login modal/cart empty handling etc) created by Aziah. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +13,38 @@
 </head>
 <body>
 
-<!-- <?php require_once "inc/header.inc.php"; ?> -->
+<?php require_once "inc/header.inc.php"; ?>
 <?php require_once "inc/cart.inc.php"; ?>
+
 <!--Cart-->
-<div class="SContainer SCcart">
+
+<!-- Hide the checkout if the user's cart is empty. If they are not logged in ask them to login or continue as guest, and then redirect to home  -->
+
+<?php
+    if(isset($_SESSION['user_id']) and (!(isset($_SESSION['total_prd_cnt']) and $_SESSION['total_prd_cnt'] > 0))){
+        //don't show modal
+        echo "<span class='center'>
+        <h1 class='title cart'>Your cart is empty</h1>
+        <p>Come back here when you have added a product to your cart.
+        </span";
+        
+    }elseif(!(isset($_SESSION['total_prd_cnt']) and $_SESSION['total_prd_cnt'] > 0))
+    {
+        
+        require_once "inc/login-modal.inc.php";
+        echo '<script src="scripts/login-empty-cart.js" defer></script>';
+    }else{
+echo 
+'<div class="SContainer SCcart">
     <table>
         <tr>
             <th>Product</th>
             <th>Quantity</th>
             <th>Subtotal</th>
 
-        </tr>
+        </tr>';
 
-        <?php
+        
         @session_start();
         require_once "scripts/dbconnect.php";
         $ids = array();
@@ -33,6 +52,8 @@
         $sql = "SELECT * FROM Items WHERE item_code = ?";
         global $conn;
         $total = 0;
+
+
         if(isset($_SESSION['cart'])){
             foreach($_SESSION['cart'] as $items){
                 $statement = mysqli_stmt_init($conn);
@@ -55,45 +76,48 @@
                                          </div>
                                      </td>
                                           
-                                          <td><input type='number' value='" .$items['count'] ."'></td>
+                                          <td><p>   " .$items['count'] ."</p></td>
                                           <td>$" .$items['count']*$price ."</td>
                                      </tr>";
+                                     
             $total = $items['count']*$price + $total;
             }
             
         }}
         
         mysqli_close($conn);
-        
-        ?>
-
+    
         
 
+        
 
 
 
-    </table>
+
+ echo '</table>
 
 <div class="Tprice">
     <table>
         <tr>
             <td>Subtotal</td>
-            <td><?php echo $total; ?></td>
+            <td>' .$total .'</td>
         </tr>
         <tr>
             <td>Tax</td>
-            <td><?php echo $total*.1 ?></td>
+            <td>' .$total*.1 .'</td>
         </tr>
         <tr>
             <td>Total</td>
-            <td><?php echo $total + $total*.1; ?></td>
+            <td>' .($total + $total*.1) .'</td>
         </tr>
 
     </table>
     
 
 </div>
-<a href="Purchase.php" class="BTN CartBTN">Purchase</a>
+
+<button type="button" class="BTN CartBTN hidden" id="checkout_login">Purchase</button>
+<a href="Purchase.php" class="BTN CartBTN hidden" id="checkout">Purchase</a>
 
 </div>
 </div>
@@ -125,7 +149,20 @@
 
     
 </div>
+';
+//if user is logged in, no need for login modal to load
+if(isset($_SESSION['user_id'])){
+    echo '
+    <script>
+    checkout = document.getElementById("checkout");
+    checkout.classList.remove("hidden");
+    </script>';
+}else{
 
+    echo '<script src="scripts/login-modal.js" defer></script>';
+    require_once "inc/login-modal.inc.php";
+}
 
-</body>
-</html>
+echo'</body>
+</html>';
+    }

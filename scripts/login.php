@@ -14,6 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $username = $_GET["username"];
     $password = $_GET["password"];
+    $url = $_GET['url'];
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
     echo "<h1>finding " . $username. " with hash " . $hash."</h1>";
@@ -36,7 +37,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
             $showAlert = 'Login Successful';
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['name'] = $row['preferred'];
-            header("Location: ../home.php");
+            
+            //Added conditonal to redirect to purchase page if user logs in with cart login modal prior to purchase - Az
+            if($url === "cart"){
+                header("Location: ../purchase.php");
+            }else{
+                header("Location: ../home.php");
+            }
         } else {
             echo "<h1>Incorrect Password</h1>";
             $showAlert = 'Incorrect Password';

@@ -6,7 +6,7 @@ $_SESSION['currentProduct'] =  $_GET["item_code"];
 
 
 //Get product data from the request to display further down
-//below was creating issue with add to cart (as using post), was not required, therefore, turned always tr
+//below was creating issue with add to cart (as using post), was not required, therefore, turned always true
 if(1) {
 
 // Include file which makes the
