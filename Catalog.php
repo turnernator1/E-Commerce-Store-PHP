@@ -1,3 +1,5 @@
+<?php require_once "inc/session.inc.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

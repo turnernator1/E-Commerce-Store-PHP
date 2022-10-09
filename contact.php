@@ -1,3 +1,5 @@
+<?php require_once "inc/session.inc.php"; ?>
+
 <!-- this is the general page users will use to login -->
 <!DOCTYPE html>
 <html lang="en">

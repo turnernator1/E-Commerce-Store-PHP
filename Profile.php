@@ -22,6 +22,7 @@ require_once 'scripts\dbconnect.php';?>
 <!--Top navigation menu-->
 
 <?php require_once "inc/header.inc.php"; ?>
+<?php require_once "inc/cart.inc.php"; ?>
 
 <body>
 <section id="profile-header">

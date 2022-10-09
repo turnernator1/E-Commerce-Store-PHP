@@ -1,6 +1,8 @@
+<?php require_once "inc/session.inc.php"; ?>
+
 <?php
 
-@session_start();
+
 
 
 //when user presses add to cart button

@@ -1,8 +1,9 @@
+<?php require_once "inc/session.inc.php"; ?>
+
 <?php
-session_start();
+
 $_SESSION['currentProduct'] =  $_GET["item_code"];
 
-$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 
 //Get product data from the request to display further down
 //below was creating issue with add to cart (as using post), was not required, therefore, turned always tr
