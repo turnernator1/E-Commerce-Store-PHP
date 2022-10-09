@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
+    <script src="scripts/cart-remove.js" defer></script>
     <title>Cart</title>
 </head>
 <body>
@@ -70,8 +71,11 @@ echo
                             <img src='data:image/jpeg;base64,$bytes'>" .
                              "<div> <p>" .$name ."</p>
                                     <small>Price:$" .$price ."</small>
-                                             <br>    
-                                             <a href=''>Remove</a>
+                                             <br>
+                                             <form id='form__submit' action='inc/cart.inc.php' method='post'> 
+                                             <input type='text' name='prod_id' class='hidden' value='" .$code ."'>   
+                                             <a href='#' onclick='submitForm()'>Remove</a>
+                                             </form>
                                          </div>
                                          </div>
                                      </td>
