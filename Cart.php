@@ -1,3 +1,7 @@
+<?php // session implementation by Jack Turner
+session_start();
+
+$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <!-- HTML/CSS Template created by Jeremy Genovese, Cart functionality/dynamic elements (php/JS etc) created by Aziah. -->
 
 <!DOCTYPE html>
