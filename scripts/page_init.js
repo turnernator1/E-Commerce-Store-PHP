@@ -32,7 +32,7 @@ window.onload = function() {
 // updates welcome message on homepage
 function welcome(){
     const welcome = document.getElementById("welcome");
-    if (get_username() != null){
+    if (get_username() != ''){
         welcome.innerText = 'Welcome, ' + get_username();
     } else {
         welcome.innerText = 'Welcome, Guest!\nPlease Sign In or Register!';
