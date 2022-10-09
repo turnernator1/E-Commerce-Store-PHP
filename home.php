@@ -18,7 +18,11 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <?php require_once "inc/cart.inc.php"; ?>
 <body>
 
-<h1 id="welcome"></h1>
+<h1 id="welcome"><?php if(isset($_SESSION['name'])){
+                            echo "Welcome, " . $_SESSION['name'] . "!";
+                        } else{
+                            echo "Welcome, Guest! \n Please Sign In or Register";
+    } ?></>
 
 <!--Featured categories-->
 <div class="Categories">
