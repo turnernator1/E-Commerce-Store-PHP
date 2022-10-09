@@ -35,138 +35,42 @@
 
 
     <div class="row">
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
+        <?php
+        require_once "scripts/dbconnect.php";
+        $sql = "SELECT * from Items where marketplace_flag = 0";
+        global $conn;
 
-        </div>
+        if($result = mysqli_query($conn, $sql)){
+        $num_rows = mysqli_num_rows($result);
+        while($row = mysqli_fetch_assoc($result)) {
+        $code = $row['item_code'];
+        $name = $row['item_name'];
+        $brand = $row['brand'];
+        $price = $row['price'];
+        $rating = $row['rating'];
+        $descr = $row['description'];
+        $bytes = $row['image_bytes'];
+        // print image and name
+        echo "<div class='col-4'><a href='Product%20page.php?item_code=" . $code."'><img src='data:image/jpeg;base64,$bytes'>" .
+            "<h3>" . $brand ."</h3>" .
+            "<h4>" .$name . "</h4>" .
+            " <div class='Rating'>";
+        //get and print rating
+        for ($x = 1; $x<=5;$x++)    {
+            if($x <= $rating){
+                echo " <span class='fa fa-star checked'></span>";
+            }else {
+                echo "<span class='fa fa-star'></span>";
+            }
+        }
+        echo "</div>";
+        //print price
+        echo "<p> $" . $price."</p></a></div>";}}?>
 
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
 
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
-
-        <div class="col-4">
-            <img src="Images/test.png">
-            <h4>PRODUCT NAME GOES HERE</h4>
-            <div class="Rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <p>PRICE GOES HERE $50</p>
-            
-
-        </div>
 
 </div>
-            <div class="Page-BTN">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-                <span>&#8594;</span>
 
-            </div>
 
 </div>
 </div>

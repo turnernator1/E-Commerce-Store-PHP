@@ -1,4 +1,5 @@
-<?php require_once "inc/session.inc.php"; ?>
+<?php require_once "inc/session.inc.php";
+global $session_value?>
 <!--HTML/CSS Template created by Jeremy Genovese, PHP and session implementation by Jack Turner -->
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +29,7 @@
 
             <?php
             require_once "scripts/dbconnect.php";
-            $sql = "SELECT * from Items where marketplace_flag = 0";
+            $sql = "SELECT * from Items where marketplace_flag = 0 LIMIT 5";
             global $conn;
 
             if($result = mysqli_query($conn, $sql)){

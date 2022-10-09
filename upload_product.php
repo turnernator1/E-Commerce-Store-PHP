@@ -5,9 +5,11 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="Author" content="Jack Turner">
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
+    <script src="scripts/uploadcheck.js" defer></script>
     <title>Upload your Item</title>
 </head>
 <?php require_once "inc/header.inc.php"; ?>
@@ -25,7 +27,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
                                 <input name="price" class="right" type="number" step="0.01" placeholder="Price ($)" required>
             </span>
             <textarea name="descr" required>Please write a short description of your product here.</textarea>
-            <input name="bytes" type="file" accept="image/*"  required>
+            <input id="image" name="bytes" type="file" accept="image/*" onchange="validateSize(this)"  required>
 
             <button type="submit" class="BTN login_button register_button">Upload</button>
         </form>

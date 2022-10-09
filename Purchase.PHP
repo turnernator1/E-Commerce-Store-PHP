@@ -1,3 +1,4 @@
+<?php require_once "inc/session.inc.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,10 @@
     <title>Cart</title>
 </head>
 <body>
-<div class="W3row">
+<div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form action="scripts/completepurchase.php" method="post">
 
         <div class="W3row">
           <div class="col-50">
@@ -22,16 +23,16 @@
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+            <input type="text" id="city" name="city" placeholder="Adelaide">
 
             <div class="W3row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
+                <input type="text" id="state" name="state" placeholder="SA">
               </div>
               <div class="col-50">
                 <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <input type="text" id="zip" name="zip" placeholder="5000">
               </div>
             </div>
           </div>
@@ -62,7 +63,7 @@
                 <input type="text" id="cvv" name="cvv" placeholder="352">
               </div>
             </div>
-            <a href="cart.php" class="BTN CartBTN">Purchase</a>
+            <input type="submit" class="BTN CartBTN">
           </div>
         </div>
      

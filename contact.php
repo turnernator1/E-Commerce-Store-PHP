@@ -32,7 +32,7 @@
                     </h4>
                         <br>
                         <!-- </span> -->
-                        <form class="contact_box" action="login.php">
+                        <form class="contact_box" action="home.php">
                             <span class="sideBySide">
                                 <input class="left" type="text" placeholder="First name" required>
                                 <input class="right" type="text" placeholder="Last name" required>

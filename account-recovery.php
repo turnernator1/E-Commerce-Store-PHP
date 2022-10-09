@@ -21,7 +21,7 @@
             <div class="FormContainer login_form">
                 <div class="FormBTN">
                     <h2>Reset Password</h2>
-                    <form action="reset.php">
+                    <form action="home.php">
                         <input type="text" placeholder="Username or Email Address" required>
                         <button type="submit" class="BTN login_button">Reset Password</button>
                     </form>

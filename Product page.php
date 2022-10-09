@@ -58,7 +58,7 @@ echo
 
         </div>
         <div class='col-2'>
-            <p>" . $brand ."</p>
+            <h2>" . $brand ."</h2>
             <h1>" . $name. "</h1>
             <h4>$" .$price ."</h4>
             <form method='post'>

@@ -99,9 +99,19 @@
     }
 
     .logo {
-      width: 10%;
-      max-width: 300px;
-      height: auto;
+      width: 50%;
+      height: 50%;
+      max-width: 150px;
+      margin: 0;
+      display: block;
+      float: left;
+
+
+    }
+    a .logo{
+      display: block;
+      width: 150px;
+
     }
   
   
