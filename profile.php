@@ -3,7 +3,7 @@ session_start();
 
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 global $conn;
-require_once 'dbconnect.php';?>
+require_once 'inc/dbconnect.php';?>
 <!-- this is the general page users will use to login -->
 <!DOCTYPE html>
 <html lang="en">
