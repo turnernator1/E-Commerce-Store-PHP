@@ -23,6 +23,11 @@ function get_username() {
 
 }
 
+window.onload = function() {
+    if (window.location.href.indexOf('home.php') > -1) {
+        welcome();
+    }
+}
 
 // updates welcome message on homepage
 function welcome(){

@@ -17,24 +17,8 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <?php require_once "inc/header.inc.php"; ?>
 <?php require_once "inc/cart.inc.php"; ?>
 <body>
-<div class="content">
 
-
-
-<div class="row">
-    <div class="col-2">
-        <h1>Insert Text Here</h1>
-        <p> THIS CAN BE USED FOR A BIG ADD </p>
-        <a href="" class="BTN">View Product &#8594;</a>
-            
-    </div>
-    <div class="col-2">
-            <img src="Images/test.png">
-    </div>
-    
-</div>
-</div>
-</div>
+<h1 id="welcome"></h1>
 
 <!--Featured categories-->
 <div class="Categories">
