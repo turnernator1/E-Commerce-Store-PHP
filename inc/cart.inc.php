@@ -1,3 +1,6 @@
+<!-- Keeps track of user's cart and updates their cart value in the header
+Author Aziah Miller -->
+
 <?php require_once "inc/session.inc.php"; ?>
 
 <?php
@@ -5,8 +8,9 @@
 
 
 
-//when user presses add to cart button
-if(isset($_POST['btn-atc'])){
+//when user presses add to cart button, additonal safety check to make sure quantity is always greater than 0
+
+if(isset($_POST['btn-atc']) and $_POST['quantity'] > 0){
 
     
 
@@ -14,7 +18,8 @@ if(isset($_POST['btn-atc'])){
 
     $prodID = $_SESSION['currentProduct'];
     $count = $_POST['quantity'];
-
+    
+    $_SESSION['total_prd_cnt'] = 0;
     $PRODUCT = [
         'id' => $prodID,
         'count' => $count
@@ -56,7 +61,7 @@ if(isset($_POST['btn-atc'])){
 }
 
 if(isset($_SESSION['cart'])){
-    $total_count = 0;
+    $total_count =0;
     foreach($_SESSION['cart'] as $key => $items){
         $total_count = $total_count + $items['count'];
 }
@@ -65,6 +70,7 @@ if(isset($_SESSION['cart'])){
     cartHTML = document.getElementById("myCart");
     cartHTML.innerHTML = "<b>My Cart(' .$total_count .')"
     </script>';
+    $_SESSION['total_prd_cnt'] = $total_count;
 }
 
 ?>

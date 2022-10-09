@@ -1,15 +1,18 @@
-//Js script for the login-modal include
-// currently still in development
+//Js script for the login-modal include 
+//Author - Aziah Miller
+checkout = document.getElementById("checkout_login");
+checkout.classList.remove("hidden");
 
-
-document.getElementById('checkout').addEventListener('click', 
+document.getElementById('checkout_login').addEventListener('click', 
 function(){
-    document.querySelector('.background-modal').style.display = 'none';
+    mod = document.getElementById("modal-login");
+    mod.classList.remove("hidden");
 });
 
 document.getElementById('close').addEventListener('click', 
 function(){
-    document.querySelector('.background-modal').style.display = 'none';
+    mod = document.getElementById("modal-login");
+    mod.classList.add("hidden");
 });
 
 

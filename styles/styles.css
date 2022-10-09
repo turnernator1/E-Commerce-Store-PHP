@@ -573,24 +573,36 @@ Please fix (breaks my code, form input needs a class)
   background-color: rgba(0, 0, 0, .7);
   position: absolute;
   top: 0;
+  
+
 }
 
 .modal-content {
   width: 500px;
-  height: 300px;
+  height: auto;
   background-color: white;
   border-radius: 5px;
   position: relative;
+  margin:20px;
+  display: grid;
+  justify-content: center;
 }
 
-.close {
+#close {
   position: absolute;
   top: 8px;
   right: 16px;
   font-size: 18px;
 }
 
+#close:hover {
+  cursor: pointer;
+}
 
+.modal-h1 {
+  text-align: center;
+  margin: 20px;
+}
  /* style.css */
 
  
@@ -1053,3 +1065,10 @@ label {
   display: right;
 }
 
+.title.cart {
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+  margin: 5px;
+}
