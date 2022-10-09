@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="scripts/caps-lock-on.js" defer></script>
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
@@ -25,7 +26,8 @@
                     <h2>Account Login</h2>
                     <form action="scripts/login.php" method="get">
                         <input name="username" type="text" placeholder="Username" required>
-                        <input name="password" type="password" placeholder="Password" required>
+                        <input name="password" type="password" id="password" placeholder="Password" required>
+                        <div class="warning"></div>
                         <button type="submit" class="BTN login_button">Login</button>
                     </form>
                     <br>
