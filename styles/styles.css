@@ -1,4 +1,5 @@
 
+/* Authors: Jeremy Genovese, Aziah Miller and Leo Fuentes */
 /* Affects all */
 *{
   margin: 0;
@@ -7,10 +8,8 @@
   }
   
   .Container{
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
   }
 
   .ContainerUser{
@@ -32,8 +31,9 @@
   
   /* Add a black background color to the top navigation */
   .topnav {
-      background-color: #333;
       overflow: hidden;
+      background-color: white;
+      padding: 20px 10px;
   
     }
     
@@ -109,13 +109,16 @@
     }
   
     .col-2{
-  flex-basis: 50%;
-  min-width: 300px;
+    flex-basis: 60%;
+    min-width: 300px;
+
     }
   
     .col-2 img{
-    max-width: 100%;
-    padding: 0px 0;
+      max-width: 100%;
+      height: auto;
+
+    
     }
   
     .col-2 h1{
@@ -224,6 +227,12 @@
       left: 50%;
       transform: translateX(-50% );
   
+    }
+
+    h1.welcome{
+      margin:auto;
+      padding:10px;
+      
     }
   
     h4{
