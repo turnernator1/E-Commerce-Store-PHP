@@ -1,14 +1,17 @@
 <!-- Keeps track of user's cart and updates their cart value in the header
 Author Aziah Miller -->
 
-<?php require_once "inc/session.inc.php"; ?>
+ <?php
+ @session_start();
+ ?>
 
 <?php
 
 
 
 
-//when user presses add to cart button, additonal safety check to make sure quantity is always greater than 0
+
+//when user presses add to cart button, and additonal security check to make sure quantity is always greater than 0
 
 if(isset($_POST['btn-atc']) and $_POST['quantity'] > 0){
 
@@ -56,9 +59,6 @@ if(isset($_POST['btn-atc']) and $_POST['quantity'] > 0){
     }
 }
 
-if(isset($_POST['btn-atc'])){
-
-}
 
 if(isset($_SESSION['cart'])){
     $total_count =0;
@@ -71,6 +71,18 @@ if(isset($_SESSION['cart'])){
     cartHTML.innerHTML = "<b>My Cart(' .$total_count .')"
     </script>';
     $_SESSION['total_prd_cnt'] = $total_count;
+}
+
+//handles remove cart post request (takes id)
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['prod_id'])){
+        foreach ($_SESSION['cart'] as $key => $items){
+            if($items['id'] === $_POST['prod_id']){
+                unset($_SESSION['cart'][$key]);
+                header("Location: ../cart.php");
+        }
+    }
+}
 }
 
 ?>
