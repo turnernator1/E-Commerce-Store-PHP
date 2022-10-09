@@ -9,6 +9,7 @@ global $session_value?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
 <!-- Includes header  -->
 

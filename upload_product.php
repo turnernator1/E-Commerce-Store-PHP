@@ -11,6 +11,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <script src="scripts/uploadcheck.js" defer></script>
     <title>Upload your Item</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
 <?php require_once "inc/header.inc.php"; ?>
 <?php require_once "inc/cart.inc.php"; ?>

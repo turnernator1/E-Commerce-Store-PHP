@@ -11,6 +11,7 @@
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
     <script src="scripts/cart-remove.js" defer></script>
     <title>Cart</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
 <body>
 

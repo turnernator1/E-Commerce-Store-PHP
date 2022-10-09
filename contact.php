@@ -6,6 +6,7 @@
 
 <head>
     <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>

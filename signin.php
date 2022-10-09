@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     
