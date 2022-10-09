@@ -5,6 +5,7 @@ I have also added a hidden class as certain features need to be hidden for the l
 -->
 
 
+
 <div class="topnav">
     <a href="home.php"><img src="img/logo.svg" alt="Logo" class="logo"></a>
     <a href="home.php"><b class="active">Home</b></a>
