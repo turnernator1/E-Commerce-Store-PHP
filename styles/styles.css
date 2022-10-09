@@ -97,7 +97,7 @@
       color: orange;
     }
 
-  .logo {
+  .topnav a.logo {
     width: 20%;
     max-width: 300px;
     height: auto;
