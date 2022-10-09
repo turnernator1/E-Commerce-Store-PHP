@@ -22,30 +22,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
                             echo "Welcome, " . $_SESSION['name'] . "!";
                         } else{
                             echo "Welcome, Guest! \n Please Sign In or Register";
-    } ?></>
-
-<!--Featured categories-->
-<div class="Categories">
-    <div class="SContainer">
-     <div class="row">
-        <div class="col-3">
-            <img src="Images/test.png">
-
-        </div>
-
-        <div class="col-3">
-            <img src="Images/test.png">
-
-        </div>
-
-        <div class="col-3">
-            <img src="Images/test.png">
-        </div>
-    </div>
-
-    </div>
-
-</div>
+    } ?></h1>
 
 <!--Featured Products-->
 <div class="SContainer">
