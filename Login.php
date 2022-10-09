@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/caps-lock-on.js" defer></script>
     <title>Account</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.png">
 </head>
@@ -24,7 +25,8 @@
                     <button class="BTN" id="ID">Login</button>
                     <form>
                         <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
+                        <input type="password" id="password" placeholder="Password">
+                        <div class="warning"></div>
                         <a href="">Forgot password</a>
                     </form>
                     
