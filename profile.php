@@ -11,7 +11,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
+
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
     <!-- <script src="scripts/script.js" defer></script> -->
@@ -20,7 +20,7 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <!--Top navigation menu-->
 
 <?php require_once "inc/header.inc.php"; ?>
-<?php require_once "inc/cart.inc.php"; ?>
+
 <body>
 <section id="profile-header">
       <div class="Container">
