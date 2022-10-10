@@ -16,7 +16,7 @@
 
         <div class="W3row">
           <div class="col-50">
-            <h3>Billing Address</h3>
+            <h3 id="billingTitle">Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
@@ -39,7 +39,7 @@
           </div>
 
           <div class="col-50">
-            <h3>Payment</h3>
+            <h3 id="billingTitle">Payment</h3>
             <label for="fname">Accepted Cards</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
@@ -64,7 +64,7 @@
                 <input type="text" id="cvv" name="cvv" placeholder="352">
               </div>
             </div>
-            <input type="submit" class="BTN CartBTN">
+            <input id="cartButton" type="submit" class="BTN CartBTN">
           </div>
         </div>
      

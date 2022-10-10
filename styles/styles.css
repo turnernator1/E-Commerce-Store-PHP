@@ -395,8 +395,8 @@ h3{
   
    .PPage .col-2 img {
     padding: 70px;
-    height: 50%;
-    width: 30%;
+    height: 47%;
+    width: 28%;
     position: fixed;
     margin-top: 86px;
     margin-left: -577px;
@@ -517,6 +517,12 @@ h3{
   .CartBTN {
     float: right;
 
+  }
+  #cartButton{
+    float: right;
+    margin-right: 2px;
+    border-radius: 7px;
+    height: 5%;
   }
 
 
@@ -1124,6 +1130,7 @@ a{
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  font-size: 23px;
 }
 
   .col-25 {
@@ -1146,9 +1153,13 @@ a{
 .col-25,
 .col-50,
 .col-75 {
-  padding: 0 16px;
+  padding: 14px 17px;
+  font-size: 38px;
 }
 
+#billingTitle{
+  font-size: 35px;
+}
 .container {
   background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
