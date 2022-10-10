@@ -34,7 +34,9 @@
   .topnav {
       overflow: hidden;
       background-color: white;
-      padding: 20px 10px;
+      padding: 20px 0px;
+      height: 112px;
+
   
     }
     
@@ -43,9 +45,10 @@
       float: left;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 16px;
+      padding: 5px 50px;
       text-decoration: none;
       font-size: 30px;
+      height: 130px;
     }
     
     /* Style the links inside the navigation bar */
@@ -53,7 +56,7 @@
       float: left;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 16px;
+      padding: 5px 50px;
       text-decoration: none;
       font-size: 30px;
   
@@ -244,6 +247,11 @@
       left: 50%;
       transform: translateX(-50% );
   
+    }
+
+    #searchProd{
+      width: 300px;
+      height: 50px;
     }
 
     #welcome{
@@ -458,7 +466,7 @@
   
   .FormContainer {
   border: solid 1px black;
-  width: 300px;
+  width: 352px;
   height: 400px;
   position: relative;
   text-align: center;

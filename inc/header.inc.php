@@ -14,7 +14,7 @@ I have also added a hidden class as certain features need to be hidden for the l
     <a href="marketplace.php"><b>Marketplace</b></a>
     <a href="contact.php"><b>Support</b></a>
     <form action="results.php" method="get">
-        <input  name="search" type="text" placeholder="Search for products.." required>
+        <input  id="searchProd" name="search" type="text" placeholder="Search for products.." required>
         <input type="submit" value="Search" class="BTN login_button">
     </form>
 
