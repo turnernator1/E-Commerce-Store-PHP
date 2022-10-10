@@ -225,6 +225,7 @@
   min-width: 200px;
   margin-bottom: 50px;
   transition: transform 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
   
     }
     .col-4 img {
@@ -250,8 +251,7 @@
       position: relative;
       line-height: 60px;
       color: black ;
-      font-family: arial;
-  
+      font-family: arial;  
     }
   
     .title::after {
