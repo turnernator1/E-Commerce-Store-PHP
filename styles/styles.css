@@ -246,10 +246,11 @@
   
     .title {
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 12px auto 35px;
       position: relative;
       line-height: 60px;
       color: black ;
+      font-family: arial;
   
     }
   
