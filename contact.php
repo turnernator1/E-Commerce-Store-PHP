@@ -28,23 +28,23 @@
                         <!-- <span> -->
                         <h1>Contact Us</h1>
                         <hr><br>
-                        <h4>Can't find the answer to yur question or need further support?<br>
+                        <h4 id="contactText">Can't find the answer to your question or need further support?<br>
                         We aim to respond to all inquiries within 3 business days.
                     </h4>
                         <br>
                         <!-- </span> -->
                         <form class="contact_box" action="home.php">
                             <span class="sideBySide">
-                                <input class="left" type="text" placeholder="First name" required>
-                                <input class="right" type="text" placeholder="Last name" required>
+                                <input id="contactBoxes" class="left" type="text" placeholder="First name" required>
+                                <input id="contactBoxes" class="right" type="text" placeholder="Last name" required>
                             </span>
-                            <input type="email" placeholder="Email address" required>
-                            <input type="text" placeholder="Subject" required>
+                            <input id="contactBoxes" type="email" placeholder="Email address" required>
+                            <input id="contactBoxes" type="text" placeholder="Subject" required>
                             
                             <label for="details"></label>
-                            <p>Details:</p>
+                            <p id="contactText">Tell Us More:</p>
                             <textarea rows="7" cols="50" id="details" name="details"></textarea>
-                             <button type="submit" class="BTN login_button register_button">submit</button>
+                             <button id="contactSubmit"type="submit" class="BTN login_button register_button">SUBMIT</button>
                         </form>
                     </div>
 

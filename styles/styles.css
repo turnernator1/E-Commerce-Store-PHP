@@ -163,6 +163,7 @@
   font-size: 50px ;
   line-height: 60px;
   margin: 25px 0;
+  font-family: Arial, Helvetica, sans-serif;
     }
   
     .BTN{
@@ -270,7 +271,15 @@
   
     }
 
-
+    h2{
+      color: black;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      text-align: center;
+      font-family: arial;
+    }
     #welcome{
       color: white;
       text-shadow: -1px 0px grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
@@ -609,9 +618,36 @@ Please fix (breaks my code, form input needs a class)
 
   #contact_form {
     width: 70%;
+    font-size: 30px !important;
     height: auto;
     max-width: 960px;
     margin: 0 auto;
+    font-family: arial;
+}
+#contactText{
+  font-size: 32px;
+
+}
+#contactBoxes{
+  font-size: 36px;
+  padding: 8px;
+  margin: 4px;
+}
+#contactSubmit{
+  background: #04AA6D;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 27px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 36%;
+
+}
+#details{
+  font-size: 20px;
+  resize: none;
+
 }
 
 .contact_box {
