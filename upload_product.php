@@ -22,15 +22,15 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
     </div>
     <div>
         <form action="scripts/upload.php" enctype="multipart/form-data" method="post">
-            <input name="brand" type="text" placeholder="Brand" required>
+            <input id="uploadMarket" name="brand" type="text" placeholder="Brand" required>
             <span class="sideBySide">
-                                <input name="name" class="left" type="text" placeholder="Product Name" required>
-                                <input name="price" class="right" type="number" step="0.01" placeholder="Price ($)" required>
+            <input id="uploadMarket" name="name" type="text" placeholder="Product Name" required>
+            <input id="uploadMarket" name="price" type="number" step="0.01" placeholder="Price ($)" required>
             </span>
-            <textarea name="descr" required>Please write a short description of your product here.</textarea>
+            <textarea id="uploadMarket" name="descr" required>Please write a short description of your product here.</textarea>
             <input id="image" name="bytes" type="file" accept="image/*" onchange="validateSize(this)"  required>
 
-            <button type="submit" class="BTN login_button register_button">Upload</button>
+            <button id="marketSubmit" type="submit" class="BTN login_button register_button">Upload</button>
         </form>
     </div>
 

@@ -134,6 +134,23 @@
       width: 150px;
 
     }
+    /* marketplace form */
+    
+#marketSubmit{
+  background: #04AA6D;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 27px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 36%;
+}
+#uploadMarket{
+  font-size: 36px;
+  padding: 8px;
+  margin: 4px;
+}
   
   
   
@@ -370,11 +387,19 @@ h3{
   
    .PPage .col-2 {
   padding: 20px;
+  position: absolute;
+  height: 25%;
+  width: 50%;
   
    }
   
    .PPage .col-2 img {
-    padding: 0;
+    padding: 70px;
+    height: 50%;
+    width: 30%;
+    position: fixed;
+    margin-top: 86px;
+    margin-left: -577px;
    }
   
    .PPage h4{
