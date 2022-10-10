@@ -64,17 +64,19 @@ CREATE TABLE luShippingMethods(
 
 CREATE TABLE Purchases(
     invoice_id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    user_id int NOT NULL,
-    shipping_id int NOT NULL,
+    user_id int,
+    shipping_id int,
+    name varchar (50) NOT NULL,
     address varchar (50) NOT NULL,
     suburb varchar(50) NOT NULL,
     state varchar (25) NOT NULL,
     postcode int(10) NOT NULL,
     country varchar (25) NOT NULL,
     price FLOAT(2) NOT NULL,
-    created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (shipping_id) REFERENCES luShippingMethods(shipping_id)
+    creditcard_no varchar (100) NOT NULL, -- encrypted
+    creditcard_cvv varchar (100) NOT NULL,
+    creditcard_expiry varchar (20) NOT NULL,
+    created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE PurchaseItems(
@@ -117,6 +119,6 @@ INSERT into Items(item_code, brand, item_name, description, price, rating,in_sto
 
 INSERT into luShippingMethods(type, PRICE) VALUES ('Standard', 5.00);
 
-INSERT into Purchases(user_id, shipping_id, address, suburb, state, postcode, country, price ) VALUES (1, 1, '34 Daybreak St', 'Burnside', 'SA', 5344, 'Australia', 79.90 );
+INSERT into Purchases(user_id, shipping_id, name,address, suburb, state, postcode, country, price,creditcard_no, creditcard_cvv, creditcard_expiry) VALUES (1, 1, 'Richard Rosser','34 Daybreak St', 'Burnside', 'SA', 5344, 'Australia', 79.90, 's9AFismahfjskagh', 'st7qh899==Jj!', 'September2018' );
 
 INSERT into PurchaseItems(invoice_id, item_code, quantity) VALUES (1, 554893, 4);

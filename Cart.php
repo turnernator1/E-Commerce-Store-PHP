@@ -155,6 +155,7 @@ echo
     
 </div>
 ';
+ $_SESSION["cart_total"] = ($total + $total*.1) ;
 //if user is logged in, no need for login modal to load
 if(isset($_SESSION['user_id'])){
     echo '

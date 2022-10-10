@@ -32,8 +32,8 @@
                 <input type="text" id="state" name="state" placeholder="SA">
               </div>
               <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="5000">
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" placeholder="5000">
               </div>
             </div>
           </div>
