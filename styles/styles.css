@@ -286,10 +286,14 @@
     }
   
   .footer {
-  background: black;
-  color: #8a8a8a;
-  font-size: 14px;
-  padding: 60px 0 20px;
+    background: black;
+    color: #8a8a8a;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: absolute;
+    bottom: 0;
   
   }
   
