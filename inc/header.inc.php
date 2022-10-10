@@ -15,7 +15,7 @@ I have also added a hidden class as certain features need to be hidden for the l
     <a href="contact.php"><b>Support</b></a>
     <form action="results.php" method="get">
         <input  id="searchProd" name="search" type="text" placeholder="Search for products.." required>
-        <input type="submit" value="Search" class="BTN login_button">
+        <input id="headerSub" type="submit" value="Search">
     </form>
 
     <a id = "myCart" href="cart.php"><b>My Cart</b></a>
