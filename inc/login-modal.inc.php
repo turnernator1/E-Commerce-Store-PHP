@@ -23,14 +23,16 @@ Author - Aziah Miller
             <div class=" login_form">
                 <div class="FormBTN">
                     <form action="scripts/login.php" method="get">
-                        <input name="username" type="text" placeholder="Username" required>
-                        <input name="password" type="password" placeholder="Password" required>
+                        <div id="cartMid">
+                        Username: <br>
+                        <input id="cartBox" name="username" type="text" placeholder="Username" required> <br>
+                        Password: <br>
+                        <input id="cartBox" name="password" type="password" placeholder="Password" required> <br>
                         <!-- Hack to include url data in the request without session/js (hence the in-line hidden styling) -->
                         <input id="redirect_data" name="url" type="hidden" value="cart">
-                        <button type="submit" class="BTN login_button">Login</button>
+                        <button id="cartButton1" type="submit" class="BTN login_button">Login</button>
+                        </div>
                     </form>
-                    <br>
-                    <hr>
                     <br>
                     <span class="modal-h1" id="continue_message">
                     <h2>Continue to purchase</h2>

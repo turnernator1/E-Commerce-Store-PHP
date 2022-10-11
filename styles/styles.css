@@ -524,6 +524,30 @@ h3{
     border-radius: 7px;
     height: 5%;
   }
+  #cartBox{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  #cartMid{
+    margin-left: 95px;
+    font-size: 20px;
+    font-family: arial;
+  }
+  #cartButton1{
+    background: #04AA6D;
+    margin: 4px 0;
+    border-radius: 6px;
+    width: 76%;
+    font-size: 19px;
+    padding-left: 103px;
+    border: 2px solid black;
+  }
+  #cartButton1:hover{
+    background-color: orange;
+  }
+  p{
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 
 
@@ -697,6 +721,18 @@ Please fix (breaks my code, form input needs a class)
   top: 0;
   
 
+}
+#accLine{
+  font-size: 22px;
+  margin-bottom: 17px;
+
+}
+
+#loginForm{
+  font-size: 20px;
+  font-family: arial;
+  text-align: left;
+  margin-left: 34px;
 }
 
 .modal-content {
