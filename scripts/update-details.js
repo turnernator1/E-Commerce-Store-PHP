@@ -11,7 +11,6 @@ password1.addEventListener('input', function(){
 	password2.required = false;
 	password1.required= false;
 }
-
 });
 
 password2.addEventListener('input', function(){
@@ -19,7 +18,6 @@ password2.addEventListener('input', function(){
     if(password2.value === ""){
 	password1.required = false;
 }
-
 });
 
 function validatePassword(){
@@ -29,10 +27,43 @@ function validatePassword(){
     return true;
 };
 
+email1 = document.getElementById('email');
+
+email2 = document.getElementById('cemail');
+
+password1.addEventListener('input', function(){
+    email2.required = true;
+    if(email1.value === ""){
+	email2.required = false;
+	email1.required= false;
+}
+});
+
+email2.addEventListener('input', function(){
+    email1.required = true;
+    if(email2.value === ""){
+	email1.required = false;
+}
+});
+
+
+function validateEmail(){
+    if(email1.value !== email2.value){
+        return false;
+    }
+    return true;
+};
+
 function submitForm(event){
             if(!validatePassword()){
                 event.preventDefault();
                  document.getElementById("pass_error").style.visibility = 'visible';
+                 return;
         }
-}
+            if(!validateEmail()){
+                event.preventDefault();
+                document.getElementById("email_error").style.visibility = 'visible';
+    }
+
+};
 

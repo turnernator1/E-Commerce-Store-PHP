@@ -16,13 +16,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     global $conn;
     require_once 'dbconnect.php';
 
-    $username = $_POST["username"];
+    $username = $_POST["phnumber"];
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
-    $title = $_POST["title"];
     $surname = $_POST["surname"];
     $preferred = $_POST["preferred"];
-    $email = $_POST["email"];
+    $email = $_POST["street"];
+    $email = $_POST["suburb"];
+    $email = $_POST["postcode"];
 
     $sql = "Select * from users where username=?";
     $stmt = $conn->prepare($sql);
