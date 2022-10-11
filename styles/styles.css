@@ -1222,7 +1222,7 @@ label {
   
 }
 
-.test {
+.detail_element {
   border: solid 1px #dddddd;
   padding: 10px;
   margin-top: 10px;
@@ -1238,7 +1238,7 @@ label {
   margin-right: 30%;
 }
 
-#pass_error {
+.form_error {
   text-align: center;
   background-color: #f7a7a3;
   margin: auto;

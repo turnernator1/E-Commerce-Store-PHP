@@ -17,7 +17,7 @@ require_once 'scripts\dbconnect.php';?>
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
-    <script src="scripts/account-details.js" defer></script>
+    <script src="scripts/update-details.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
     <!-- <script src="scripts/script.js" defer></script> -->
@@ -56,6 +56,7 @@ require_once 'scripts\dbconnect.php';?>
           </div>
           <div class="details vline">
               <h1>Update Account Information</h1>
+              <p>Only fill in the details you want to change.</p>
           </div>
 
         </div>
@@ -70,13 +71,18 @@ require_once 'scripts\dbconnect.php';?>
       <div class="row">
         <div class="column1">
                         <form action="scripts/update-details.php" onsubmit="submitForm(event);" method="post">
-                            <input name="phnumber" type="number" placeholder="Phone number" class="test">
-                            <span class="sideBySide" class="test">
-                                <input name="preferred" class="left test" type="text" placeholder="First name">
-                                <input name="surname" class="right test" type="text" placeholder="Last name">
+                            <input name="phnumber" type="number" placeholder="Phone number" class="detail_element">
+                            <span class="sideBySide" class="detail_element">
+                                <input name="preferred" class="left detail_element" type="text" placeholder="First name">
+                                <input name="surname" class="right detail_element" type="text" placeholder="Last name">
                             </span>
-                            <input name="email" type="email" placeholder="Email address" class="test">
-                            <div class="tooltip">Tips for a secure password?
+                            <input id="email" name="email" type="email" placeholder="New Email address" class="detail_element">
+                            <input id="cemail" name="cemail" type="email" placeholder="Confirm Email address" class="detail_element">
+                            <input name="password" type="password" placeholder="Password" class="detail_element" required>
+                            
+            </div>
+            <div class="column2">
+            <div class="tooltip">Tips for a secure password?
                                 <span class="tooltiptext">
                                 <ul>
                                     <li>Include numbers, symbols, and both uppercase and lowercase.</li>
@@ -85,15 +91,12 @@ require_once 'scripts\dbconnect.php';?>
                                 </ul>    
                                 </span>
                             </div>
-                            
-            </div>
-            <div class="column2">
-            <input id="pass" name="password" type="password" placeholder="Password" autocomplete="new-password" class="test">
-                            <input id="cpass" name="cpassword" type="password" placeholder="Confirm Password" autocomplete="new-password" class="test">
-                            <input name="street" type="text" placeholder="Address" class="test">
-                            <span class="sideBySide" class="test">
-                                <input name="suburb" class="left test" type="text" placeholder="Suburb">
-                                <input name="postcode" class="right test" type="number" placeholder="Postcode">
+            <input id="pass" name="npass" type="password" placeholder="New Password" autocomplete="new-password" class="detail_element">
+                            <input id="cpass" name="cpassword" type="password" placeholder="Confirm Password" autocomplete="new-password" class="detail_element">
+                            <input name="street" type="text" placeholder="Street address" class="detail_element">
+                            <span class="sideBySide" class="detail_element">
+                                <input name="suburb" class="left detail_element" type="text" placeholder="Suburb">
+                                <input name="postcode" class="right detail_element" type="number" placeholder="Postcode">
                             </span>
                             
             
@@ -104,10 +107,13 @@ require_once 'scripts\dbconnect.php';?>
                         </form>
                         
                         </div>
-                        <div id="pass_error" class="update_center">
-                        <p>Confirmation password does not match</p>
-                          
+                        <div id="pass_error" class="update_center form_error detail_element">
+                        <p>Confirmation password does not match</p>                         
                         </div>
+                        <div id="email_error" class="update_center form_error detail_element">
+                        <p>Confirmation email does not match</p>                         
+                        </div>
+                        <br>
                     </div>
                     
             </div>
