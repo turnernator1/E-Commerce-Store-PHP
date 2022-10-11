@@ -1,3 +1,5 @@
+<!-- CSS HTML Created by Aziah Miller, Dynamically update elements (PHP to udpate profile name, user's listing etc created by Jack Turner) -->
+
 <?php
 session_start();
 
@@ -14,6 +16,7 @@ require_once 'scripts\dbconnect.php';?>
     <link rel="stylesheet" type="text/css" href="styles/login.css">
     <link rel="stylesheet" type="text/css" href="styles/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/page_init.js" user_id="<?php echo $session_value; ?>" async></script>
 
     <meta charset="UTF-8" />
     <meta name="author" content="Aziah Miller" />
@@ -69,8 +72,7 @@ require_once 'scripts\dbconnect.php';?>
             <p>20 Transactions</p>
           </div>
           <div class="logout vline">
-            <h1>Logout</h1>
-            <p>Update account details</p>
+          <a href="account-details.php"><h1>Update Account Details</h1></a>
           </div>
         </div>
       </div>

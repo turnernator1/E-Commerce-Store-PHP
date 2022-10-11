@@ -1,5 +1,5 @@
 <?php require_once "inc/session.inc.php";
-global $session_value?>
+global $session_value;?>
 <!--HTML/CSS Template created by Jeremy Genovese, PHP and session implementation by Jack Turner -->
 <!DOCTYPE html>
 <html lang="en">
