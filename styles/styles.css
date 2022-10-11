@@ -182,6 +182,55 @@
   font-family: arial;
   resize: none;
 }
+/* register */
+#signupForm{
+  font-family: arial;
+
+}
+#signupTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin-top: 31px;
+}
+
+#signupField{
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+  margin-top: 0px;
+  margin-bottom: 17px;
+
+}
+#signupSelect{
+  margin-left: -80px;
+  height: 36px;
+  padding: 9px;
+
+}
+#regSubHead{
+  text-align: inherit;
+  font-size: 23px;
+}
+
+#signupButton{
+  background: #04AA6D;
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 96%;
+  padding-left: 99px;
+  margin-left: 6px;
+}
+#signupButton:hover{
+  background-color: orange;
+}
+#regFormCont{
+  height: auto;
+  width: 600px;
+}
   
   
   
