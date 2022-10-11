@@ -24,9 +24,11 @@
             <div class="FormContainer login_form">
                 <div class="FormBTN">
                     <h2>Account Login</h2>
-                    <form action="scripts/login.php" method="get">
-                        <input name="username" type="text" placeholder="Username" required>
-                        <input name="password" type="password" id="password" placeholder="Password" required>
+                    <form id="loginForm" action="scripts/login.php" method="get">
+                        Username:
+                        <input id="accLine" name="username" type="text" placeholder="Username" required>
+                        Password:
+                        <input id="accLine" name="password" type="password" id="password" placeholder="Password" required>
                         <div class="warning"></div>
                         <button type="submit" class="BTN login_button">Login</button>
                     </form>

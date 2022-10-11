@@ -17,18 +17,19 @@ $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : ''; ?>
 <?php require_once "inc/cart.inc.php"; ?>
 <body>
     <div class="row">
-    <h1>Create a new listing here</h1>
-    <p> Please be careful to accurately describe your item and be sure to include details on its condition. </p>
+    <h1 id="listingText">Create a new listing here</h1> </br>
     </div>
     <div>
-        <form action="scripts/upload.php" enctype="multipart/form-data" method="post">
-            <input id="uploadMarket" name="brand" type="text" placeholder="Brand" required>
-            <span class="sideBySide">
+        <form id="listingForm" action="scripts/upload.php" enctype="multipart/form-data" method="post">
+        <div id="listingHeader"> Brand:</div>    
+        <input id="uploadMarket" name="brand" type="text" placeholder="Brand" required>
+            <div id="listingHeader">Product Name:</div> 
             <input id="uploadMarket" name="name" type="text" placeholder="Product Name" required>
+            <div id="listingHeader"> Price:</div> 
             <input id="uploadMarket" name="price" type="number" step="0.01" placeholder="Price ($)" required>
-            </span>
-            <textarea id="uploadMarket" name="descr" required>Please write a short description of your product here.</textarea>
-            <input id="image" name="bytes" type="file" accept="image/*" onchange="validateSize(this)"  required>
+            <div id="listingHeader"> Description:</div>  
+            <textarea id="uploadMarketArea" name="descr" required placeholder="Please write a short description of your product here."></textarea><br>
+            <input id="listingImage" name="bytes" type="file" accept="image/*" onchange="validateSize(this)"  required> <br>
 
             <button id="marketSubmit" type="submit" class="BTN login_button register_button">Upload</button>
         </form>
