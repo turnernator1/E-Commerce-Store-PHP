@@ -144,12 +144,43 @@
   font-size: 27px;
   border: 2px solid black;
   border-radius: 8px;
-  width: 36%;
+  width: 45%;
+  margin-left: 10px;
+
 }
 #uploadMarket{
-  font-size: 36px;
-  padding: 8px;
-  margin: 4px;
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+#listingForm{
+  width: fit-content;
+  margin: auto;
+}
+#listingHeader{
+  font-size: 30px;
+  margin-left: 10px;
+  font-family: arial;
+}
+#listingImage{
+  margin-left: 10px;
+}
+#listingText{
+  margin: auto;
+  font-family: arial;
+  margin-left: 38%;
+  margin-top: 58px;
+  margin-bottom: 20px;
+
+}
+#uploadMarketArea{
+  width: 737px;
+  height: 137px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: arial;
+  resize: none;
 }
   
   
