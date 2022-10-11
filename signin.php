@@ -1,4 +1,11 @@
 <!-- this is the general page users will use to login -->
+<?php require_once "inc/session.inc.php";
+if(isset($_SESSION['errorMessage'])){
+    echo "<script type = 'text/javascript'>
+           alert('" . $_SESSION["errorMessage"] ."'); 
+           </script>";
+    unset($_SESSION['errorMessage']);
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

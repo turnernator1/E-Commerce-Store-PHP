@@ -1,4 +1,10 @@
-<?php require_once "inc/session.inc.php"; ?>
+<?php require_once "inc/session.inc.php";
+if(isset($_SESSION['errorMessage'])){
+    echo "<script type = 'text/javascript'>
+           alert('" . $_SESSION["errorMessage"] ."'); 
+           </script>";
+    unset($_SESSION['errorMessage']);
+}?>
 
 <!-- HTML/CSS Template created by Jeremy Genovese, Cart functionality/dynamic elements (php/JS/login modal/cart empty handling etc) created by Aziah. -->
 

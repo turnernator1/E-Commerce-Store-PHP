@@ -1,5 +1,11 @@
 <?php require_once "inc/session.inc.php";
-global $session_value;?>
+global $session_value;
+if(isset($_SESSION['errorMessage'])){
+    echo "<script type = 'text/javascript'>
+           alert('" . $_SESSION["errorMessage"] ."'); 
+           </script>";
+    unset($_SESSION['errorMessage']);
+}?>
 <!--HTML/CSS Template created by Jeremy Genovese, PHP and session implementation by Jack Turner -->
 <!DOCTYPE html>
 <html lang="en">

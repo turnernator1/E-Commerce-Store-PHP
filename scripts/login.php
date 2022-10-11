@@ -27,8 +27,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     echo "<h1>Num rows : " . $num."</h1>";
 
     if($num == 0) {
-        echo "<h1>Account does not exist</h1>";
-        $showError = "Account does not exist"; //no account found
+        $_SESSION["errorMessage"]= "Username does not exist.";
+        header("Location: ../signin.php"); //no account found
     }
     else {
         $row = mysqli_fetch_assoc($result);
@@ -47,8 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
                 header("Location: ../home.php");
             }
         } else {
-            echo "<h1>Incorrect Password</h1>";
-            $showAlert = 'Incorrect Password';
+            $_SESSION["errorMessage"]= "Incorrect Password!";
+            header("Location: ../signin.php");
         }
 
     }// end if

@@ -46,21 +46,25 @@ if($session_value != '') {
         //echo "<h1>" . $item_code . " " . $brand . " " . $name . " " . $price . " " . $descr . " " . $bytes . " " . $user_id ."</h1>";
         $result = $stmt->get_result();
         if (!$result){
-            //error in upload
-            $showError = "Error in upload";
-            //header("Location: ../marketplace.php");
-        } else{
             //return to home page, maybe make this direct to profile so the user can see thier updated listings
             //header("Location: ../home.php");
+            $_SESSION["errorMessage"]= "Upload Successful!";
+            header("Location: ../profile.php");
+        } else{
+            //error in upload
+            $_SESSION["errorMessage"]= "Error in upload, please try again!";
+            header("Location: ../upload_product.php");
+            //header("Location: ../marketplace.php");
         }
-        //redirect to account?
+
 
 
 
 
     }//end if
 }else {
-    echo "<h1>User not signed in</h1>";
+    $_SESSION["errorMessage"]= "Not signed in!";
+    header("Location: ../home.php");
 //Error user not signed in
 }
 ?>
