@@ -26,7 +26,7 @@ Author - Aziah Miller
                         <input name="username" type="text" placeholder="Username" required>
                         <input name="password" type="password" placeholder="Password" required>
                         <!-- Hack to include url data in the request without session/js (hence the in-line hidden styling) -->
-                        <input name="url" type="hidden" value="cart">
+                        <input id="redirect_data" name="url" type="hidden" value="cart">
                         <button type="submit" class="BTN login_button">Login</button>
                     </form>
                     <br>

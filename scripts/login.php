@@ -41,6 +41,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
             //Added conditonal to redirect to purchase page if user logs in with cart login modal prior to purchase - Az
             if($url === "cart"){
                 header("Location: ../purchase.php");
+            }elseif($url === "cart_page"){
+                header("Location: ../cart.php");
             }else{
                 header("Location: ../home.php");
             }
