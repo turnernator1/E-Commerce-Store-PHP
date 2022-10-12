@@ -36,7 +36,7 @@ if(isset($_SESSION['errorMessage'])){
 
             <?php
             require_once "scripts/dbconnect.php";
-            $sql = "SELECT * from Items where marketplace_flag = 0 LIMIT 5";
+            $sql = "SELECT * from Items where marketplace_flag = 0 LIMIT 4";
             global $conn;
 
             if($result = mysqli_query($conn, $sql)){
@@ -76,16 +76,15 @@ if(isset($_SESSION['errorMessage'])){
     <div class="Container">
         <div class="row">
             <div class="footer-col-1">
-                <h3> Footer links go here </h3>
+                <h3>S.E.N.I.O.R </h3>
 
             </div>
 
             <div class="footer-col-2">
-                <h3> Footer links go here </h3>
-            
-            
-            </div>
+                <h3>Web Design God Group 2022</h3>
 
+
+            </div>
         </div>
     
     
