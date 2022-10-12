@@ -1,0 +1,1341 @@
+
+/* Authors: Jeremy Genovese, Aziah Miller and Leo Fuentes */
+/* Affects all */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  zoom: 96%;
+  }
+  
+  .Container{
+    max-width: 100%;
+    margin: auto;
+    
+  }
+
+  .ContainerUser{
+    max-width: 100%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  
+   /* Home.css */
+
+  /* Optional Background colour */
+  .Header{
+    background: white;
+  }
+  
+  /* Top navigation menu styling */
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+      overflow: hidden;
+      background-color: white;
+      padding: 20px 0px;
+      height: 112px;
+    }
+    /* search header + submit */
+    #searchProd{
+      margin-top: 10px;
+      width: 300px;
+      height: 50px;
+      border-radius: 11px;
+      font-size: 20px;
+      padding-left: 20px;
+    }
+    #headerSub{
+      background: orange;
+      height: 52px;
+      cursor: pointer;
+      width: 97px;
+      font-size: 22px;
+      color: white;
+      transition: width 0.5s;
+      border-radius: 11px;
+      
+    }
+    /* Style the title inside the navigation bar */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 5px 50px;
+      text-decoration: none;
+      font-size: 30px;
+      height: 130px;
+    }
+    
+    /* Style the links inside the navigation bar */
+    .topnav b {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 5px 50px;
+      text-decoration: none;
+      font-size: 30px;
+  
+    }
+    
+    /* Change the color of links on hover */
+    .topnav b:hover {
+      background-color: #ddd;
+      color: black;
+  
+    }
+    
+    /* Add a color to the active/current link */
+    .topnav b.active {
+      background-color: #333;
+      color: orange;
+    }
+  
+    .topnav-right {
+      float: right;
+    }
+
+    .topnav-right c {
+      float: right;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 30px;
+    }
+  
+    /* Change the color of links on hover */
+    .topnav-right c:hover {
+      background-color: #ddd;
+      color: black;
+  
+    }
+    
+    /* Add a color to the active/current link */
+    .topnav-r c.active {
+      background-color: #333;
+      color: orange;
+    }
+
+    .logo {
+      width: 50%;
+      height:  55%;
+      max-width: 150px;
+      margin: 0;
+      display: block;
+      float: left;
+
+
+    }
+    a .logo{
+      display: block;
+      width: 150px;
+
+    }
+    /* marketplace form */
+    
+#marketSubmit{
+  background: #04AA6D;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 27px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 45%;
+  margin-left: 10px;
+
+}
+#uploadMarket{
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+#listingForm{
+  width: fit-content;
+  margin: auto;
+}
+#listingHeader{
+  font-size: 30px;
+  margin-left: 10px;
+  font-family: arial;
+}
+#listingImage{
+  margin-left: 10px;
+}
+#listingText{
+  margin: auto;
+  font-family: arial;
+  margin-left: 38%;
+  margin-top: 58px;
+  margin-bottom: 20px;
+
+}
+#uploadMarketArea{
+  width: 737px;
+  height: 137px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: arial;
+  resize: none;
+}
+/* register */
+#signupForm{
+  font-family: arial;
+
+}
+#signupTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin-top: 31px;
+}
+
+#signupField{
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+  margin-top: 0px;
+  margin-bottom: 17px;
+
+}
+#signupSelect{
+  margin-left: -80px;
+  height: 36px;
+  padding: 9px;
+
+}
+#regSubHead{
+  text-align: inherit;
+  font-size: 23px;
+}
+
+#signupButton{
+  background: #04AA6D;
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 96%;
+  padding-left: 99px;
+  margin-left: 6px;
+}
+#signupButton:hover{
+  background-color: orange;
+}
+#regFormCont{
+  height: auto;
+  width: 600px;
+}
+  
+  
+  
+   /* Banner ad/image */
+  
+    .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .col-2{
+    flex-basis: 60%;
+    min-width: 300px;
+
+    }
+  
+    .col-2 img{
+      max-width: 100%;
+      height: auto;
+
+    
+    }
+  
+    .col-2 h1{
+  font-size: 50px ;
+  line-height: 60px;
+  margin: 25px 0;
+  font-family: Arial, Helvetica, sans-serif;
+    }
+  
+    .BTN{
+      display: inline-block;
+      background: #ff523b;
+      color: white;
+      padding: 8px 120px;
+      margin: 30px 0;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.5s;
+    }
+  
+    .BTN.login_button{
+      background: #04AA6D;
+      margin: 5px 0;
+      border: 2px solid black;
+    }
+
+    
+
+    .BTN:hover{
+      background: blue;
+    }
+  
+    .BTN.login_button:hover{
+      background: orange;
+    }
+  
+    .Header .row{
+  margin-top: 10%;
+  
+    }
+  
+    .Categories{
+  margin: 70px 0;
+  
+    }
+  
+    .col-3{
+      flex-basis: 30%;
+      min-width: 250px;
+      margin-bottom: 30px;
+    }
+  
+    .col-3 img{
+  width: 100%;
+  
+    }
+  
+    .SContainer {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+    }
+  
+    .col-4{
+  flex-basis: 25%;
+  padding: 10px;
+  height: 250px;
+
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  
+    }
+    .col-4 img {
+      width: 100%;
+  
+    }
+  
+    .col-4 p{
+      font-size: 14px;
+    }
+  
+    .col-4:hover{
+    transform: translateY(-5px );
+   }
+  
+    .checked {
+      color: orange;
+    }
+  
+    .title {
+      text-align: center;
+      margin: 12px auto 35px;
+      position: relative;
+      line-height: 60px;
+      color: black ;
+      font-family: arial;  
+    }
+  
+    .title::after {
+      content: "";
+      background: black;
+      width: 80px;
+      height: 5px;
+      border-radius: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50% );
+  
+    }
+
+    h2{
+      color: black;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      text-align: center;
+      font-family: arial;
+    }
+    #welcome{
+      color: white;
+      text-shadow: -1px 0px grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      text-align: center;
+      font-family: arial;
+      background-image: url(../img/trees.jpg);
+      background-color: grey;
+  }
+      
+
+  
+h4{
+  color: black;
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+h3{
+  font-size: 20px;
+
+}
+.Rating{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+  
+  .footer {
+    background: black;
+    color: #8a8a8a;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: absolute;
+    bottom: 0;
+  
+  }
+  
+  
+  
+   /* Catalog page */
+  
+  .row2{
+    justify-content: space-between;
+    margin: 100px auto 50px ;
+  
+  }
+  select{
+    border: 1px solid black;
+    padding: 5px;
+  }
+  
+  .Page-BTN {
+  margin: 0 auto 80px;
+  
+  }
+  
+  .Page-BTN span {
+  background: black;
+  color: white;
+  display: inline-block;
+  border: 1px solid black;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  }
+  
+  .Page-BTN span:hover {
+  background: orange;
+  
+  }
+  
+  
+  
+   /* product page */
+  
+   .PPage {
+    margin-top: 80px;
+   }
+  
+   .PPage .col-2 {
+  padding: 20px;
+  position: absolute;
+  height: 25%;
+  width: 50%;
+  
+   }
+  
+   .PPage .col-2 img {
+    padding: 70px;
+    height: 47%;
+    width: 28%;
+    position: fixed;
+    margin-top: 86px;
+    margin-left: -577px;
+   }
+  
+   .PPage h4{
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+  
+   }
+  
+   .PPage select {
+  display: block;
+  padding: 10px;
+  margin-top: 20px;
+  
+   }
+  
+   .PPage input{
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border: solid 1px black;
+  
+   }
+  
+   .IMGrow {
+  display: flex;
+  justify-content: space-between;
+  
+   }
+  
+   .IMGcol {
+  flex-basis: 24%;
+  cursor: pointer;
+  
+   }
+  
+   .PLimg{
+  
+  
+   }
+  
+   .PSimg{
+  
+    
+   }
+  
+  
+    /* cart */
+  
+  .SCcart {
+    margin: 80px auto;
+  }
+  table{
+  
+  width: 100%;
+  border-collapse: collapse;
+  
+  }
+  
+  .cartimage{
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .cartimage p{
+    size: 20px;
+
+  }
+
+  th{
+  text-align: left;
+  padding: 5px;
+ 
+  background: orange;
+  color: black;
+  font-weight: normal ;
+  
+  }
+  
+  td{
+    padding: 10px 5px;
+  
+  }
+  td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px ;
+ 
+  }
+  
+  
+  td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  
+  }
+  
+  .Tprice {
+  display: flex;
+  justify-content: flex-end;
+  
+  }
+  
+  
+  .Tprice table {
+  border-top: 3px solid black;
+  width: 100%;
+  max-width: 350px;
+  
+  }
+
+
+  
+  td:last-child {
+   text-align: right;
+  
+  }
+  
+  th:last-child{
+    text-align: right;
+  }
+  
+  .CartBTN {
+    float: right;
+
+  }
+  #cartButton{
+    float: right;
+    margin-right: 2px;
+    border-radius: 7px;
+    height: 5%;
+  }
+  #cartBox{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  #cartMid{
+    margin-left: 95px;
+    font-size: 20px;
+    font-family: arial;
+  }
+  #cartButton1{
+    background: #04AA6D;
+    margin: 4px 0;
+    border-radius: 6px;
+    width: 76%;
+    font-size: 19px;
+    padding-left: 103px;
+    border: 2px solid black;
+  }
+  #cartButton1:hover{
+    background-color: orange;
+  }
+  p{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #sellButton{
+    background: #04AA6D;
+    padding: 14px;
+    margin: 4px 0;
+    border-radius: 6px;
+    width: 130%;
+    color: white;
+    font-size: 31px;
+    border: 2px solid black;
+  }
+  #sellButton:hover{
+    background-color: orange;
+  }
+  #sellForm{
+    margin: auto;
+    width: fit-content;
+  }
+
+
+    /* Account */
+  
+  .AccountPage{
+  padding: 50px 0;
+  
+  }
+  
+  .FormContainer {
+  border: solid 1px black;
+  width: 352px;
+  height: 400px;
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+  margin: auto;
+  box-shadow: 0 0 20px;
+  
+  }
+
+  .FormContainer.login_form {
+    height: auto;
+  }
+  
+  .FormContainer span {
+  font-weight: bold;
+  padding: 0 10px;
+  color: black;
+  cursor: pointer;
+  width: 100px;
+  display: inline-block;
+  
+  }
+  
+  .FormContainer form{
+  width: auto;
+  padding: 0 20px;
+  }
+
+  form.contact_fom{
+    max-width: auto;
+    padding: 0 20px;
+    }
+
+  .FormBTN {
+    display: inline-block;
+  }
+
+  .register_button {
+      width: 100%;
+  }
+  span.sideBySide {
+    display:flex;
+    width: auto;
+    padding: 0;
+  }
+
+
+  .registration_form {
+    width: auto;
+  }
+
+  input.left{
+    margin-right: 5px;
+  }
+  input.right {
+    margin-left: 5px;
+  }
+
+  #pass_tips {
+    text-align: left;
+    background-color: orange;
+  }
+
+  /* Credit for the tool tip CSS W3 Schools https://www.w3schools.com/cssref/sel_after.asp */
+  
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    text-align: left;
+    color: orange;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 10%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltiptext li {
+    margin-bottom:10px;
+    text-align: left;
+    list-style-type: circle;
+  }
+
+  #contact_form {
+    width: 70%;
+    font-size: 30px !important;
+    height: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: arial;
+}
+#contactText{
+  font-size: 32px;
+
+}
+#contactBoxes{
+  font-size: 36px;
+  padding: 8px;
+  margin: 4px;
+}
+#contactSubmit{
+  background: #04AA6D;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 27px;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 36%;
+
+}
+#details{
+  font-size: 20px;
+  resize: none;
+
+}
+
+.contact_box {
+  display:grid;
+  grid-column: span 2;
+}
+
+.background-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  position: absolute;
+  top: 0;
+  
+
+}
+#accLine{
+  font-size: 22px;
+  margin-bottom: 17px;
+
+}
+
+#loginForm{
+  font-size: 20px;
+  font-family: arial;
+  text-align: left;
+  margin-left: 34px;
+}
+
+.modal-content {
+  width: 500px;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  margin:20px;
+  display: grid;
+  justify-content: center;
+}
+
+#close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+#close:hover {
+  cursor: pointer;
+}
+
+.modal-h1 {
+  text-align: center;
+  margin: 20px;
+}
+ /* style.css */
+
+ 
+
+/* Page styling */
+
+
+.content{
+  
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+
+
+
+/* Top navigation menu styling */
+
+/* Add a black background color to the top navigation */
+.topnav {
+background-color: #333;
+overflow: hidden;
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the title inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 5px 6px;
+text-decoration: none;
+font-size: 30px;
+}
+
+/* Style the links inside the navigation bar */
+.topnav b {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 30px;
+font-family: arial
+}
+
+/* Change the color of links on hover */
+.topnav b:hover {
+background-color: #ddd;
+color: black;
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav b.active {
+background-color: #333;
+color: orange;
+}
+
+
+/* Card styling */
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 300px;
+margin: auto;
+text-align: center;
+font-family: arial;
+float:left;
+margin-left: 1%;
+margin-top: 1%;
+}
+
+.price {
+color: grey;
+font-size: 22px;
+}
+
+.card button {
+border: none;
+outline: 0;
+padding: 12px;
+color: white;
+background-color: #000;
+text-align: center;
+cursor: pointer;
+width: 100%;
+font-size: 18px;
+}
+
+.card button:hover {
+opacity: 0.7;
+  background-color: #333;
+  color: orange;
+}
+
+
+#signin{
+  float: right;
+  margin-top: -57px;
+}
+
+#myCart{
+  float: right;
+  margin-top: -57px;
+}
+
+
+#searchbar{
+  text-align:left;
+  vertical-align:text-top;
+  font-size:19px;
+  left:2000px;
+  top:20px;
+  width:409px;
+  height:38px;
+  position:absolute;
+  line-height:auto;
+  color:#8d8d8d;
+}
+
+/* Card styling */
+.cards{
+  margin: auto;
+  height: 480px;
+  width: 2000px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  float:left;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.brand{
+  font-weight: bold;
+}
+
+.name{
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+
+/* contact box */
+
+* {
+box-sizing: border-box;
+}
+
+
+
+label {
+padding: 12px 12px 12px 0;
+display: inline-block;
+}
+
+
+
+
+.container {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+
+
+
+
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+  box-sizing: border-box;
+}
+
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.col-25, .col-75, input[type=submit] {
+  width: 100%;
+  margin-top: 0;
+}
+  .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+  }
+}
+
+
+  /* login.css */
+
+  .hidden {
+    display: none;
+}
+
+
+
+   /* Profile.css */
+
+   
+.profileHeader {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: auto;
+  border-bottom: 1px solid #c9d3dd;
+  line-height: 1.6;
+}
+
+.profile-image {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.about {
+  margin-left: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+.reviews {
+  margin-left: 20%;
+  color: #000;
+  display: flex;
+  display: grid;
+}
+
+span.star_revs {
+  display: flex;
+}
+
+.logout {
+  margin-left:20%;
+}
+
+.vline {
+  border-left: 1px solid #c9d3dd;
+  padding: 20px;
+}
+
+.GContainer {
+  max-width: 90%;
+  padding-left: 25px;
+  padding-right: 25px;
+    }
+  
+
+.col-4_margin{
+      flex-basis: 24%;
+      padding: 10px;
+      min-width: 200px;
+      margin-bottom: 50px;
+      transition: transform 0.5s;
+      border: 1px solid #c9d3dd;
+      overflow: visible;
+  }
+
+.col-4_margin img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* shop elements */
+a:visited{
+  text-decoration: none;
+  color: black;
+}
+.col-4:active {
+  color: orange;
+}
+a{
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+
+   /* Purchase.css */
+
+   .W3row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+  }
+  
+    
+.W3row input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 23px;
+}
+
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+
+  
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 14px 17px;
+  font-size: 38px;
+}
+
+#billingTitle{
+  font-size: 35px;
+}
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+
+
+label {
+  margin-bottom: 10px;
+  display: right;
+}
+
+.title.cart {
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+  margin: 5px;
+}
+
+.details.vline {
+  position: absolute;
+  margin: 40%;
+}
+
+.details_form {
+  min-height: 300px;
+  background-color: white;
+  margin-top: 25px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.body_grey {
+  background-color: #c9d3dd;
+  
+}
+
+.detail_element {
+  border: solid 1px #dddddd;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width:100%;
+  box-sizing: border-box;
+  display: grid;
+}
+
+.update_center {
+  width: 80%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.form_error {
+  text-align: center;
+  background-color: #f7a7a3;
+  margin: auto;
+  border-radius: 25px;
+  visibility: hidden;
+}
+
+
+
