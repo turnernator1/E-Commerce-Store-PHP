@@ -319,23 +319,27 @@
     }
   
     .col-4{
+  
   flex-basis: 25%;
   padding: 10px;
   height: 250px;
-
   min-width: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   transition: transform 0.5s;
   font-family: Arial, Helvetica, sans-serif;
+
+
   
     }
     .col-4 img {
       width: 100%;
+      
   
     }
   
     .col-4 p{
       font-size: 14px;
+
     }
   
     .col-4:hover{
@@ -409,13 +413,14 @@ h3{
 }
   
   .footer {
+    
     background: black;
     color: #8a8a8a;
     font-size: 14px;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    position: absolute;
+    position: relative;
     bottom: 0;
   
   }
@@ -428,6 +433,7 @@ h3{
     justify-content: space-between;
     margin: 100px auto 50px ;
   
+    
   }
   select{
     border: 1px solid black;
@@ -533,9 +539,9 @@ h3{
   
   .SCcart {
     margin: 80px auto;
-  
   }
   table{
+  
   width: 100%;
   border-collapse: collapse;
   
@@ -544,29 +550,46 @@ h3{
   .cartimage{
     display: flex;
     flex-wrap: wrap;
+
   }
+
+  .cartimage p{
+    size: 20px;
+
+  }
+
+  .cartimage a{
+    font-size: 30px;
+
+  }
+
   th{
   text-align: left;
   padding: 5px;
+ 
   background: orange;
   color: black;
   font-weight: normal ;
+  font-size: 30px;
   
   }
   
   td{
     padding: 10px 5px;
+    font-size: 30px;
+  
   }
   td input{
   width: 40px;
   height: 30px;
   padding: 5px ;
+ 
   }
   
   
   td img {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   margin-right: 10px;
   
   }
@@ -582,8 +605,11 @@ h3{
   border-top: 3px solid black;
   width: 100%;
   max-width: 350px;
+  font-size: 30px;
   
   }
+
+
   
   td:last-child {
    text-align: right;
@@ -690,17 +716,7 @@ h3{
     max-width: auto;
     padding: 0 20px;
     }
-/* 
-Please fix (breaks my code, form input needs a class)  
-  form input {
-  
-    width: 100%;
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    border: 1px solid black;
-  }
-   */
+
   .FormBTN {
     display: inline-block;
   }
@@ -1034,37 +1050,15 @@ opacity: 0.7;
 box-sizing: border-box;
 }
 
-/* 
-PLEASE FIX
-input[type=text], select, textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 4px;
-resize: vertical;
-} */
+
 
 label {
 padding: 12px 12px 12px 0;
 display: inline-block;
 }
 
-/* input[type=submit] {
-PLEASE FIX
-  background-color: #04AA6D;
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-float: right;
-} */
 
-/* 
-PLEASE FIX
-input[type=submit]:hover {
-background-color: #45a049;
-} */
+
 
 .container {
 border-radius: 5px;
@@ -1087,35 +1081,13 @@ width: 75%;
 margin-top: 6px;
   box-sizing: border-box;
 }
-/* 
-PLEASE FIX
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-} */
+
 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
-/* 
-PLEASE FIX
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
 
-input[type=submit]:hover {
-  background-color: #45a049;
-} */
 
 .container {
   border-radius: 5px;
@@ -1379,7 +1351,6 @@ label {
   border-radius: 25px;
   visibility: hidden;
 }
-
 #success_details {
   border-color: green;
   background-color: #dcffdc;

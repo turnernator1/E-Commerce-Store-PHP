@@ -115,11 +115,11 @@ echo
         </tr>
         <tr>
             <td>Tax</td>
-            <td>$' .$total*.1 .'</td>
+            <td>$' .number_format(floor(($total*.1)*100)/100,2,'.',',') .'</td>
         </tr>
         <tr>
             <td>Total</td>
-            <td>$' .($total + $total*.1) .'</td>
+            <td>$' .number_format(floor(($total + $total*.1)*100)/100,2,'.',',') .'</td>
         </tr>
 
     </table>
