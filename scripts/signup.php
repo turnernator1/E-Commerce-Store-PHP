@@ -50,28 +50,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "INSERT INTO `Users` ( `username`, 
                 `password`, `title`,`surname`, `preferred`, `email`,`created`) VALUES (?,?, 
                 ?, ?, ?,?,current_timestamp())";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssss", $username, $hash, $title,$surname,$preferred,$email);
-            $stmt->execute();
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("ssssss", $username, $hash, $title,$surname,$preferred,$email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if (!$result) {
+                    $_SESSION["errorMessage"]= "Error registering, please try again.";
+                    header("Location: ../register.php");
+                }
+                // getting new users user_id from database for session data
+                $sql = "SELECT * FROM Users WHERE username = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                $result=$stmt->get_result();
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['name'] = $row['preferred'];
+                // return home signed in
+                header("Location: ../home.php");
 
-            $result = $stmt->get_result();
-            if ($result) {
-                $showAlert = true;
             }
 
-            // getting new users user_id from database for session data
-            $sql = "SELECT * FROM Users WHERE username = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("s", $username);
-            $stmt->execute();
-            $result=$stmt->get_result();
-            $row = mysqli_fetch_assoc($result);
-            $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['name'] = $row['preferred'];
-            // return home signed in
-            header("Location: ../home.php");
-
-            }
             else {
                 $_SESSION["errorMessage"]= "Passwords do not match";
                 header("Location: ../register.php");
