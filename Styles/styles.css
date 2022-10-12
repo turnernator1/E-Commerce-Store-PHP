@@ -552,6 +552,11 @@ h3{
 
   }
 
+  .cartimage a{
+    font-size: 30px;
+
+  }
+
   th{
   text-align: left;
   padding: 5px;
@@ -559,11 +564,13 @@ h3{
   background: orange;
   color: black;
   font-weight: normal ;
+  font-size: 30px;
   
   }
   
   td{
     padding: 10px 5px;
+    font-size: 30px;
   
   }
   td input{
@@ -575,8 +582,8 @@ h3{
   
   
   td img {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   margin-right: 10px;
   
   }
@@ -592,6 +599,7 @@ h3{
   border-top: 3px solid black;
   width: 100%;
   max-width: 350px;
+  font-size: 30px;
   
   }
 
