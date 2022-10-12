@@ -92,7 +92,7 @@ CREATE TABLE PurchaseItems(
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON SENIOR.* TO dbadmin@localhost;
 
-
+-- 10 Items as required for the project
 INSERT into Items(item_code, brand, item_name, description, price, rating,in_stock, image_bytes, marketplace_flag) VALUES (554893,'XTM 4x4','Double Swag',
                                                                                                       'If you are looking for a simple and easy way to camp, the XTM Double Swag delivers exactly that! You''ll have this swag assembled in no time, so all that''s left to do is sit back and enjoy the outdoors. Featuring quality 400GSM Ripstop poly-cotton canvas construction teamed with double stitched seams and a thick PVC flooring to keep the rain and moisture out.',
                                                                                                       399.99,5,20,
