@@ -35,7 +35,7 @@ if(isset($_SESSION['errorMessage'])){
                         Username:
                         <input id="accLine" name="username" type="text" placeholder="Username" required>
                         Password:
-                        <input id="accLine" name="password" type="password" id="password" placeholder="Password" required>
+                        <input id="p_ass" name="password" type="password" id="password" placeholder="Password" required>
                         <div class="warning"></div>
                         <button type="submit" class="BTN login_button">Login</button>
                     </form>
