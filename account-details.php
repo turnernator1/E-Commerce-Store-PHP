@@ -2,6 +2,7 @@
 
 <?php
 @session_start();
+//
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 global $conn;
 require_once 'scripts\dbconnect.php';?>
