@@ -35,7 +35,7 @@
 
 
 
-    <div class="row">
+    <div class="row Crow">
         <?php
         require_once "scripts/dbconnect.php";
         $sql = "SELECT * from Items where marketplace_flag = 0";

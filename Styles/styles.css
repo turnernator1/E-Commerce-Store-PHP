@@ -316,11 +316,14 @@
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
+
     }
   
     .col-4{
-  
+
   flex-basis: 25%;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 10px;
   height: 250px;
   min-width: 200px;
@@ -418,10 +421,11 @@ h3{
     color: #8a8a8a;
     font-size: 14px;
     width: 100%;
+    margin-top: 200px;
     padding-top: 50px;
     padding-bottom: 50px;
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    bottom: -50px;
   
   }
   
@@ -429,6 +433,12 @@ h3{
   
    /* Catalog page */
   
+  .Crow {
+  justify-content: flex-start;
+ 
+
+  }
+
   .row2{
     justify-content: space-between;
     margin: 100px auto 50px ;
