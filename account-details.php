@@ -1,8 +1,8 @@
 <!-- CSS HTML, Javascript Created by Aziah Miller, User Profile Data Ported over from Jack Turner's contribution to profile page  -->
 
 <?php
-session_start();
-
+@session_start();
+print_r($_POST);
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 global $conn;
 require_once 'scripts\dbconnect.php';?>
@@ -92,7 +92,7 @@ require_once 'scripts\dbconnect.php';?>
                                 </span>
                             </div>
             <input id="pass" name="npass" type="password" placeholder="New Password" autocomplete="new-password" class="detail_element">
-                            <input id="cpass" name="cpassword" type="password" placeholder="Confirm Password" autocomplete="new-password" class="detail_element">
+                            <input id="cpass" name="cpass" type="password" placeholder="Confirm Password" autocomplete="new-password" class="detail_element">
                             <input name="street" type="text" placeholder="Street address" class="detail_element">
                             <span class="sideBySide" class="detail_element">
                                 <input name="suburb" class="left detail_element" type="text" placeholder="Suburb">
@@ -113,6 +113,12 @@ require_once 'scripts\dbconnect.php';?>
                         <div id="email_error" class="update_center form_error detail_element">
                         <p>Confirmation email does not match</p>                         
                         </div>
+                        <div id="email_inuse_error" class="update_center form_error detail_element">
+                        <p>The email address is already in use, please choose another email or reset your password.</p>                         
+                        </div>
+                        <div id="phone_inuse_error" class="update_center form_error detail_element">
+                        <p>The phone number is already in use, please enter another number or reset your password.</p>                         
+                        </div>
                         <br>
                     </div>
                     
@@ -120,6 +126,36 @@ require_once 'scripts\dbconnect.php';?>
             </div>
 
     </section>
+<?php 
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    echo "<script>";
+    foreach ($_POST as $a => $b) {
+        if($a == 'unique_phone' || $a == 'unique_email'){
+
+        }else{
+            echo 'document.querySelector("input[name=' .$a .']").value = "' .$b .'";';
+        }
+    }
+
+    echo "</script>";
+
+    if(empty($_POST['unique_phone'])){
+        echo "FOUND PHONE FOUND PHONE";
+       echo '<script>
+       document.getElementById("phone_inuse_error").style.visibility = "visible";
+       </script>';
+    }
+
+    if(empty($_POST['unique_email'])){
+        echo "FOUND EMAIL FOUND EMAI";
+
+        echo '<script>
+        document.getElementById("email_inuse_error").style.visibility = "visible";
+        </script>';
+     }
+    }
+?>
 
 </body>
 </html>

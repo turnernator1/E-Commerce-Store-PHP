@@ -1128,6 +1128,7 @@ clear: both;
   width: auto;
   border-bottom: 1px solid #c9d3dd;
   line-height: 1.6;
+  border-radius: 15px;
 }
 
 .profile-image {

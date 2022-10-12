@@ -52,6 +52,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $showAlert = true;
             }
 
+
+
             // getting new users user_id from database for session data
             $sql = "SELECT * FROM Users WHERE username = ?";
             $stmt = $conn->prepare($sql);
@@ -61,6 +63,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = mysqli_fetch_assoc($result);
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['name'] = $row['preferred'];
+
+            $uid = $row['user_id'];
+            //Add row with user ID in Addresses Field - Aziah
+            $sql = "INSERT INTO `useraddresses` ( `user_id`) VALUES (?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $uid);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+
             // return home signed in
             header("Location: ../home.php");
 
