@@ -319,23 +319,27 @@
     }
   
     .col-4{
+  
   flex-basis: 25%;
   padding: 10px;
   height: 250px;
-
   min-width: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   transition: transform 0.5s;
   font-family: Arial, Helvetica, sans-serif;
+
+
   
     }
     .col-4 img {
       width: 100%;
+      
   
     }
   
     .col-4 p{
       font-size: 14px;
+
     }
   
     .col-4:hover{
@@ -409,13 +413,14 @@ h3{
 }
   
   .footer {
+    
     background: black;
     color: #8a8a8a;
     font-size: 14px;
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    position: absolute;
+    position: relative;
     bottom: 0;
   
   }
@@ -428,6 +433,7 @@ h3{
     justify-content: space-between;
     margin: 100px auto 50px ;
   
+    
   }
   select{
     border: 1px solid black;
@@ -1143,6 +1149,7 @@ clear: both;
   width: auto;
   border-bottom: 1px solid #c9d3dd;
   line-height: 1.6;
+  border-radius: 15px;
 }
 
 .profile-image {
