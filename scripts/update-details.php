@@ -1,7 +1,7 @@
 <?php
 
 @session_start();
-//Authors - Jack Turner & Aziah Miller
+//Authors  Aziah Miller
 $showAlert = false;
 $showError = false;
 $exists=false;
@@ -79,123 +79,144 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
     }
 
-    if($unique_email and $unique_phone){
-
-            for($index = 0; $index <2; $index ++){
-
-                $data = array();
-                if($index=0){
-                    $data = array(
-                        'phone' => $_POST["phnumber"],
-                        'surname' => $_POST["surname"],
-                        'preferred' => $_POST["preferred"],
-                        'password' => $_POST["cpass"],
-                        'email' => $_POST["cemail"]                        
-                    );
-
-                }elseif($index=1){
-                    $data = array(
-                        'suburb' => $_POST["suburb"],
-                        'postcode' => $_POST["postcode"],
-                        'address' => $_POST["street"],
-                );
-                }
-
-            
-                
-
-                $temp = $_POST['cpass'];
-                if(isset($temp) and !empty($temp)){
-                    $data['password'] = password_hash($temp,
-                        PASSWORD_DEFAULT);
-                }
-
-            //ripping the selected and values input
-            foreach($data as $key=>$val)
-            {
-                if(isset($val) and !empty($val)){
-                    $columnNames[] = '`' . $key. '`';
-                    $placeHolders[] = '?';
-                    $values[] = $val;
-            }
-            }
-            if(!isset($columnNames)){
-                continue;
-            }
-
-            //setting user ID (to be appended later)
-            $user_id = $_SESSION['user_id'];
-            //Dynamically Creating the SQL statement depending on the columns
-            if($index = 0){
-                $sql = "UPDATE `users` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
-            }elseif($index = 1){
-                $sql = "UPDATE `useraddresses` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
-            }
-            
-
-            
-             //array to contain the first variable input type param and values for columns
-            $bindString = array();
-            $bindValues = array();
-            echo $sql;
-            // build bind type mapping
-            foreach($values as $value) {
-                switch ($key) {
-                    case "phone":
-                        $bindString[] = 'i';
-                        break;
-                    case "surname":
-                        $bindString[] = 's';
-                        break;
-                    case "preferred":
-                        $bindString[] = 's';
-                        break;
-                    case "postcode":
-                        $bindString[] = 'i';
-                        break;
-                    case "password":
-                        $bindString[] = 's';
-                        break;
-                    default:
-                        $bindString[] = 's';
-                }
-
-                $bindValues[] = $value;
-            }
+    function update($arr, $table){
 
 
-                //append user ID/int bind mapping
-                $bindValues[] = $user_id;
-                $bindString[] = 'i';
+        global $conn;
+        require_once 'dbconnect.php';
 
-                // prepend the bind mapping to the beginning of the array
-                array_unshift($bindValues, join('', $bindString));
-
-                // convert the array to an array of references
-                $bindReferences = array();
-                foreach($bindValues as $k => $v) {
-                    $bindReferences[$k] = &$bindValues[$k];
-                }
-
-
-                //calling functions to execute
-    
-                $statement = $conn->stmt_init();
-                if (!$statement->prepare($sql)) {
-                    die("Error message: " . $conn->error);
-                    return;
-            }
-
-
-
-            //passing the paramater array to the bind_param function 
-            call_user_func_array(array($statement, "bind_param"), $bindReferences);
-
-            $statement->execute();  
-            $statement->close();
-
+        $data = $arr;
+        $temp = $_POST['cpass'];
+        if(isset($temp) and !empty($temp)){
+            $data['password'] = password_hash($temp,
+                PASSWORD_DEFAULT);
         }
+
+        //ripping the selected and values input
+        foreach($data as $key=>$val)
+        {
+            if(isset($val) and !empty($val)){
+                $columnNames[] = '`' . $key. '`';
+                $placeHolders[] = '?';
+                $values[] = $val;
+        }
+        }
+        if(!isset($columnNames)){
+            return;
+        }
+
+        //setting user ID (to be appended later)
+        $user_id = $_SESSION['user_id'];
+        //Dynamically Creating the SQL statement depending on the columns
+        if($table = "users"){
+            $sql = "UPDATE `users` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
+        }elseif($table = "useraddresses"){
+            $sql = "UPDATE `useraddresses` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
+        }
+
+        
+        //array to contain the first variable input type param and values for columns
+        $bindString = array();
+        $bindValues = array();
+        echo $sql;
+        // build bind type mapping
+        foreach($values as $value) {
+            switch ($key) {
+                case "phone":
+                    $bindString[] = 'i';
+                    break;
+                case "surname":
+                    $bindString[] = 's';
+                    break;
+                case "preferred":
+                    $bindString[] = 's';
+                    break;
+                case "postcode":
+                    $bindString[] = 'i';
+                    break;
+                case "password":
+                    $bindString[] = 's';
+                    break;
+                default:
+                    $bindString[] = 's';
+            }
+
+            $bindValues[] = $value;
+        }
+
+
+        //append user ID/int bind mapping
+        $bindValues[] = $user_id;
+        $bindString[] = 'i';
+
+        // prepend the bind mapping to the beginning of the array
+        array_unshift($bindValues, join('', $bindString));
+
+        // convert the array to an array of references
+        $bindReferences = array();
+        foreach($bindValues as $k => $v) {
+            $bindReferences[$k] = &$bindValues[$k];
+        }
+
+
+        //calling functions to execute
+
+        $statement = $conn->stmt_init();
+        if (!$statement->prepare($sql)) {
+            die("Error message: " . $conn->error);
+            
+            return;
     }
 
-}
+
+
+    //passing the paramater array to the bind_param function 
+    call_user_func_array(array($statement, "bind_param"), $bindReferences);
+
+    echo "Returning";
+    $statement->execute();  
+    $statement->close();
+    echo "Returning";
+    return 1;
+    }
+
+    if($unique_email and $unique_phone){
+        $updateCount = 0;
+            $data_users = array(
+                'phone' => $_POST["phnumber"],
+                'surname' => $_POST["surname"],
+                'preferred' => $_POST["preferred"],
+                'password' => $_POST["cpass"],
+                'email' => $_POST["cemail"]                        
+            );
+            
+
+        $updateCount += update($data_users, "users");
+        echo $updateCount;
+
+            $data_address = array(
+                    'suburb' => $_POST["suburb"],
+                    'postcode' => $_POST["postcode"],
+                    'address' => $_POST["street"],
+            );
+
+
+        $updateCount += update($data_address, "useraddresses");
+        echo $updateCount;
+        if($updateCount > 0){
+            echo '<form id="myForm" action="../account-details.php" method="post">
+           <input type="hidden" name="success" value="1">
+            </form>
+            <script type="text/javascript">
+            document.getElementById("myForm").submit();
+            </script>';
+        }else{
+            header("Location: ../account-details.php");
+        }
+    }
+            
+        }
+    
+
+
     ?>

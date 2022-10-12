@@ -2,7 +2,6 @@
 
 <?php
 @session_start();
-print_r($_POST);
 $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 global $conn;
 require_once 'scripts\dbconnect.php';?>
@@ -69,7 +68,11 @@ require_once 'scripts\dbconnect.php';?>
     
     <div class="details_form">
       <div class="row">
+      <div id="success_details" class="update_center detail_element">
+                        <p>Your details have been successfully updated!</p>                         
+                        </div>
         <div class="column1">
+            
                         <form action="scripts/update-details.php" onsubmit="submitForm(event);" method="post">
                             <input name="phnumber" type="number" placeholder="Phone number" class="detail_element">
                             <span class="sideBySide" class="detail_element">
@@ -78,7 +81,6 @@ require_once 'scripts\dbconnect.php';?>
                             </span>
                             <input id="email" name="email" type="email" placeholder="New Email address" class="detail_element">
                             <input id="cemail" name="cemail" type="email" placeholder="Confirm Email address" class="detail_element">
-                            <input name="password" type="password" placeholder="Password" class="detail_element" required>
                             
             </div>
             <div class="column2">
@@ -103,7 +105,7 @@ require_once 'scripts\dbconnect.php';?>
             </div>
             <div>
             </div>
-                            <button type="submit" id="submit" class="BTN update_center">Update Details</button>
+                            <button type="submit" id="submit" class="btn update_center">Update Details</button>
                         </form>
                         
                         </div>
@@ -140,18 +142,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     echo "</script>";
 
-    if(empty($_POST['unique_phone'])){
-        echo "FOUND PHONE FOUND PHONE";
+    if(!empty($_POST['unique_email'])){
        echo '<script>
        document.getElementById("phone_inuse_error").style.visibility = "visible";
        </script>';
     }
 
-    if(empty($_POST['unique_email'])){
-        echo "FOUND EMAIL FOUND EMAI";
+    if(!empty($_POST['unique_phone'])){
 
         echo '<script>
         document.getElementById("email_inuse_error").style.visibility = "visible";
+        </script>';
+     }
+
+     if($_POST['success']==1){
+        echo '<script>
+        document.getElementById("success_details").style.visibility = "visible";
         </script>';
      }
     }
