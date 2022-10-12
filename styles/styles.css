@@ -1379,3 +1379,15 @@ label {
   border-radius: 25px;
   visibility: hidden;
 }
+
+#success_details {
+  border-color: green;
+  background-color: #dcffdc;
+  border-radius: 25px;
+  visibility: hidden;
+}
+
+#details-link{
+  color: #302dc3;
+  font-size: 20px;
+}
