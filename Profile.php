@@ -72,7 +72,7 @@ require_once 'scripts\dbconnect.php';?>
             <p>20 Transactions</p>
           </div>
           <div class="logout vline">
-          <a href="account-details.php"><h1>Update Account Details</h1></a>
+          <a id="details-link" href="account-details.php"><h1>Update Account Details</h1></a>
           </div>
         </div>
       </div>
