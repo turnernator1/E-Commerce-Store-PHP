@@ -18,20 +18,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     global $conn;
     require_once 'dbconnect.php';
 
+    $data = array(
+        'phone' => $_POST["phnumber"],
+        'surname' => $_POST["surname"],
+        'preferred' => $_POST["preferred"],
+        'email' => $_POST["cemail"],
+        'password' => $_POST["npass"],      
+    );
 
 
-    print_r($_POST);
 
     //checking if the phone/email are unqiue (not in the table)
 
     $unique_email = true;
     $unique_phone = true;
-    if(!empty($_POST['email'])){
+    if(!empty($data['email'])){
 
-    $num=0;
+    
     $sql = "Select * from users where email=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $_POST['email']);
+    $stmt->bind_param("s", $data['cemail']);
     $stmt->execute();
     $result = $stmt->get_result();
     $num = mysqli_num_rows($result);
@@ -40,22 +46,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if($num>0){
-        echo "UNIQUE EMAILS FALSE";
         $unique_email = false;
     }
     }
 
-    if(!empty($_POST['phnumber'])){
+    if(!empty($data['phone'])){
 
-        $num=0;
-        $sql = "Select * from users where phone=?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $_POST['phnumber']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $num = mysqli_num_rows($result);
-        
-        echo "Value of num: " .$num;
+    
+    $sql = "Select * from users where phone=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $data['phone']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $num = mysqli_num_rows($result);
+    
+    echo "Value of num: " .$num;
     if($num>0){
         $unique_phone = false;
     }
@@ -70,8 +75,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<input type="hidden" name="'.htmlentities($a).'" value="'.htmlentities($b).'">';
         }
         echo 
-        '<input type="hidden" name="unique_phone" value="'.htmlentities($unique_phone).'">
-        <input type="hidden" name="unique_email" value="'.htmlentities($unique_email).'">
+        '<input type="hidden" name="unique_phone" value="'.htmlentities($data['unique_phone']).'">
+        <input type="hidden" name="unique_email" value="'.htmlentities($data['unique_email']).'">
         </form>
             <script type="text/javascript">
             document.getElementById("myForm").submit();
@@ -80,64 +85,48 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if($unique_email and $unique_phone){
-
-            for($index = 0; $index <2; $index ++){
-
-                $data = array();
-                if($index=0){
-                    $data = array(
-                        'phone' => $_POST["phnumber"],
-                        'surname' => $_POST["surname"],
-                        'preferred' => $_POST["preferred"],
-                        'password' => $_POST["cpass"],
-                        'email' => $_POST["cemail"]                        
-                    );
-
-                }elseif($index=1){
-                    $data = array(
-                        'suburb' => $_POST["suburb"],
-                        'postcode' => $_POST["postcode"],
-                        'address' => $_POST["street"],
+        for($i=0; $i <2; $i++){
+            if($i=0){
+                $data = array(
+                    'phone' => $_POST["phnumber"],
+                    'surname' => $_POST["surname"],
+                    'preferred' => $_POST["preferred"],
+                    'email' => $_POST["cemail"],
+                    'password' => $_POST["npass"],      
                 );
-                }
-
-            
-                
-
-                $temp = $_POST['cpass'];
-                if(isset($temp) and !empty($temp)){
-                    $data['password'] = password_hash($temp,
-                        PASSWORD_DEFAULT);
-                }
-
+            }else{
+                $data = array(
+                    'suburb' => $_POST["suburb"],
+                    'postcode' => $_POST["postcode"],
+                    'address' => $_POST["street"],     
+                );
+            }
             //ripping the selected and values input
             foreach($data as $key=>$val)
             {
-                if(isset($val) and !empty($val)){
+                if(!empty($val)){
                     $columnNames[] = '`' . $key. '`';
                     $placeHolders[] = '?';
                     $values[] = $val;
             }
             }
-            if(!isset($columnNames)){
-                continue;
-            }
 
             //setting user ID (to be appended later)
             $user_id = $_SESSION['user_id'];
             //Dynamically Creating the SQL statement depending on the columns
-            if($index = 0){
+            if($i == 0 and isset($columnNames)){
                 $sql = "UPDATE `users` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
-            }elseif($index = 1){
-                $sql = "UPDATE `useraddresses` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
+            }elseif($i == 1 and isset($columnNames)){
+                $sql = "UPDATE `useraddress` SET " . join('= ?, ', $columnNames) ."=?" ." WHERE user_id = ?";
+            }else{
+                continue;
             }
-            
 
             
              //array to contain the first variable input type param and values for columns
             $bindString = array();
             $bindValues = array();
-            echo $sql;
+
             // build bind type mapping
             foreach($values as $value) {
                 switch ($key) {
@@ -151,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         $bindString[] = 's';
                         break;
                     case "postcode":
-                        $bindString[] = 'i';
+                        $bindString[] = 's';
                         break;
                     case "password":
                         $bindString[] = 's';
@@ -195,7 +184,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $statement->close();
 
         }
-    }
+    }}
+    
 
-}
     ?>
