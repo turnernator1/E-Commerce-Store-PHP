@@ -43,7 +43,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("issssidsssd", $user_id,$name,$address,$city,$state,$postcode,$total_cost, $cardno,$cvv, $exp,$total_cost);
     $stmt->execute();
     $result = $stmt->get_result();
-    header("Location: ../home.php");
+    if(!$result){
+        unset($_SESSION["cart"]);
+        $_SESSION['cart'] = array();
+        $_SESSION["errorMessage"]= "Purchase Successful!";
+        header("Location: ../home.php");
+    } else {
+        $_SESSION["errorMessage"] = "Error in purchase! Your card was not billed. Please try again.";
+        header("Location: ../cart.php");
+    }
 
 
 

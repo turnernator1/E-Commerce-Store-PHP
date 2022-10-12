@@ -16,7 +16,7 @@ CREATE TABLE Users(
     surname varchar (25) NOT NULL,
     preferred varchar (25) NOT NULL,
     title varchar (5) NOT NULL,
-    email varchar(100) NOT NULL UNIQUE ,
+    email varchar(100) NOT NULL UNIQUE,
     phone varchar(15) UNIQUE ,
     created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
