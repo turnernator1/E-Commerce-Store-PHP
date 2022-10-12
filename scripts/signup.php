@@ -71,7 +71,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../home.php");
 
             }
-
             else {
                 $_SESSION["errorMessage"]= "Passwords do not match";
                 header("Location: ../register.php");
